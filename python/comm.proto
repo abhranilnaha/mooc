@@ -1,6 +1,5 @@
-
 option optimize_for = SPEED;
-option java_package = "eye";
+option java_package = "poke.comm";
 
 // general status. The NO[word] values are 'failure for cause' and 
 // FAILURE is w/o cause.
@@ -16,7 +15,7 @@ enum PokeStatus {
    FAILURE = 199;
 }
 
-// data - a hierartical container to send/receive name-value pairs
+// data - a hierarchical container to send/receive name-value pairs
 message NameValueSet {
     // a node should not have a value though this is not enforced
     required NodeType node_type = 1;
@@ -33,7 +32,7 @@ message NameValueSet {
     }
 }
 
-// data - a logical seperation of data/processing capabilities (same as a tentant)
+// data - a logical separation of data/processing capabilities (same as a tentant)
 message NameSpace {
    // internally created or supplied by caller when performing an action on a NS
    required int64 ns_id = 2 [default = -1]; 
