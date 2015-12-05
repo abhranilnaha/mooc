@@ -1122,21 +1122,30 @@ public final class Mgmt {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>required int32 elect_id = 2;</code>
-     *
-     * <pre>
-     * election ID (not candidate)
-     * </pre>
+     * <code>required int32 last_log_index = 1;</code>
      */
-    boolean hasElectId();
+    boolean hasLastLogIndex();
     /**
-     * <code>required int32 elect_id = 2;</code>
+     * <code>required int32 last_log_index = 1;</code>
+     */
+    int getLastLogIndex();
+
+    /**
+     * <code>required int32 term_id = 2;</code>
      *
      * <pre>
-     * election ID (not candidate)
+     * term ID (not candidate)
      * </pre>
      */
-    int getElectId();
+    boolean hasTermId();
+    /**
+     * <code>required int32 term_id = 2;</code>
+     *
+     * <pre>
+     * term ID (not candidate)
+     * </pre>
+     */
+    int getTermId();
 
     /**
      * <code>required int32 candidate_id = 3;</code>
@@ -1262,19 +1271,24 @@ public final class Mgmt {
               }
               break;
             }
-            case 16: {
+            case 8: {
               bitField0_ |= 0x00000001;
-              electId_ = input.readInt32();
+              lastLogIndex_ = input.readInt32();
+              break;
+            }
+            case 16: {
+              bitField0_ |= 0x00000002;
+              termId_ = input.readInt32();
               break;
             }
             case 24: {
-              bitField0_ |= 0x00000002;
+              bitField0_ |= 0x00000004;
               candidateId_ = input.readInt32();
               break;
             }
             case 34: {
               com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000004;
+              bitField0_ |= 0x00000008;
               desc_ = bs;
               break;
             }
@@ -1284,18 +1298,18 @@ public final class Mgmt {
               if (value == null) {
                 unknownFields.mergeVarintField(5, rawValue);
               } else {
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 action_ = value;
               }
               break;
             }
             case 48: {
-              bitField0_ |= 0x00000010;
+              bitField0_ |= 0x00000020;
               expires_ = input.readInt64();
               break;
             }
             case 56: {
-              bitField0_ |= 0x00000020;
+              bitField0_ |= 0x00000040;
               hops_ = input.readInt32();
               break;
             }
@@ -1466,27 +1480,42 @@ public final class Mgmt {
     }
 
     private int bitField0_;
-    public static final int ELECT_ID_FIELD_NUMBER = 2;
-    private int electId_;
+    public static final int LAST_LOG_INDEX_FIELD_NUMBER = 1;
+    private int lastLogIndex_;
     /**
-     * <code>required int32 elect_id = 2;</code>
-     *
-     * <pre>
-     * election ID (not candidate)
-     * </pre>
+     * <code>required int32 last_log_index = 1;</code>
      */
-    public boolean hasElectId() {
+    public boolean hasLastLogIndex() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
-     * <code>required int32 elect_id = 2;</code>
+     * <code>required int32 last_log_index = 1;</code>
+     */
+    public int getLastLogIndex() {
+      return lastLogIndex_;
+    }
+
+    public static final int TERM_ID_FIELD_NUMBER = 2;
+    private int termId_;
+    /**
+     * <code>required int32 term_id = 2;</code>
      *
      * <pre>
-     * election ID (not candidate)
+     * term ID (not candidate)
      * </pre>
      */
-    public int getElectId() {
-      return electId_;
+    public boolean hasTermId() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>required int32 term_id = 2;</code>
+     *
+     * <pre>
+     * term ID (not candidate)
+     * </pre>
+     */
+    public int getTermId() {
+      return termId_;
     }
 
     public static final int CANDIDATE_ID_FIELD_NUMBER = 3;
@@ -1495,7 +1524,7 @@ public final class Mgmt {
      * <code>required int32 candidate_id = 3;</code>
      */
     public boolean hasCandidateId() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
+      return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
      * <code>required int32 candidate_id = 3;</code>
@@ -1510,7 +1539,7 @@ public final class Mgmt {
      * <code>optional string desc = 4;</code>
      */
     public boolean hasDesc() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
+      return ((bitField0_ & 0x00000008) == 0x00000008);
     }
     /**
      * <code>optional string desc = 4;</code>
@@ -1552,7 +1581,7 @@ public final class Mgmt {
      * <code>required .LeaderElection.ElectAction action = 5;</code>
      */
     public boolean hasAction() {
-      return ((bitField0_ & 0x00000008) == 0x00000008);
+      return ((bitField0_ & 0x00000010) == 0x00000010);
     }
     /**
      * <code>required .LeaderElection.ElectAction action = 5;</code>
@@ -1571,7 +1600,7 @@ public final class Mgmt {
      * </pre>
      */
     public boolean hasExpires() {
-      return ((bitField0_ & 0x00000010) == 0x00000010);
+      return ((bitField0_ & 0x00000020) == 0x00000020);
     }
     /**
      * <code>optional int64 expires = 6 [default = -1];</code>
@@ -1597,7 +1626,7 @@ public final class Mgmt {
      * </pre>
      */
     public boolean hasHops() {
-      return ((bitField0_ & 0x00000020) == 0x00000020);
+      return ((bitField0_ & 0x00000040) == 0x00000040);
     }
     /**
      * <code>optional int32 hops = 7 [default = -1];</code>
@@ -1614,7 +1643,8 @@ public final class Mgmt {
     }
 
     private void initFields() {
-      electId_ = 0;
+      lastLogIndex_ = 0;
+      termId_ = 0;
       candidateId_ = 0;
       desc_ = "";
       action_ = poke.core.Mgmt.LeaderElection.ElectAction.DECLAREELECTION;
@@ -1627,7 +1657,11 @@ public final class Mgmt {
       if (isInitialized == 1) return true;
       if (isInitialized == 0) return false;
 
-      if (!hasElectId()) {
+      if (!hasLastLogIndex()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasTermId()) {
         memoizedIsInitialized = 0;
         return false;
       }
@@ -1647,21 +1681,24 @@ public final class Mgmt {
                         throws java.io.IOException {
       getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeInt32(2, electId_);
+        output.writeInt32(1, lastLogIndex_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeInt32(3, candidateId_);
+        output.writeInt32(2, termId_);
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        output.writeBytes(4, getDescBytes());
+        output.writeInt32(3, candidateId_);
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        output.writeEnum(5, action_.getNumber());
+        output.writeBytes(4, getDescBytes());
       }
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
-        output.writeInt64(6, expires_);
+        output.writeEnum(5, action_.getNumber());
       }
       if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        output.writeInt64(6, expires_);
+      }
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
         output.writeInt32(7, hops_);
       }
       getUnknownFields().writeTo(output);
@@ -1675,25 +1712,29 @@ public final class Mgmt {
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(2, electId_);
+          .computeInt32Size(1, lastLogIndex_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(3, candidateId_);
+          .computeInt32Size(2, termId_);
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(4, getDescBytes());
+          .computeInt32Size(3, candidateId_);
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(5, action_.getNumber());
+          .computeBytesSize(4, getDescBytes());
       }
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(6, expires_);
+          .computeEnumSize(5, action_.getNumber());
       }
       if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(6, expires_);
+      }
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(7, hops_);
       }
@@ -1814,18 +1855,20 @@ public final class Mgmt {
 
       public Builder clear() {
         super.clear();
-        electId_ = 0;
+        lastLogIndex_ = 0;
         bitField0_ = (bitField0_ & ~0x00000001);
-        candidateId_ = 0;
+        termId_ = 0;
         bitField0_ = (bitField0_ & ~0x00000002);
-        desc_ = "";
+        candidateId_ = 0;
         bitField0_ = (bitField0_ & ~0x00000004);
-        action_ = poke.core.Mgmt.LeaderElection.ElectAction.DECLAREELECTION;
+        desc_ = "";
         bitField0_ = (bitField0_ & ~0x00000008);
-        expires_ = -1L;
+        action_ = poke.core.Mgmt.LeaderElection.ElectAction.DECLAREELECTION;
         bitField0_ = (bitField0_ & ~0x00000010);
-        hops_ = -1;
+        expires_ = -1L;
         bitField0_ = (bitField0_ & ~0x00000020);
+        hops_ = -1;
+        bitField0_ = (bitField0_ & ~0x00000040);
         return this;
       }
 
@@ -1857,25 +1900,29 @@ public final class Mgmt {
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
           to_bitField0_ |= 0x00000001;
         }
-        result.electId_ = electId_;
+        result.lastLogIndex_ = lastLogIndex_;
         if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
           to_bitField0_ |= 0x00000002;
         }
-        result.candidateId_ = candidateId_;
+        result.termId_ = termId_;
         if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
           to_bitField0_ |= 0x00000004;
         }
-        result.desc_ = desc_;
+        result.candidateId_ = candidateId_;
         if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
           to_bitField0_ |= 0x00000008;
         }
-        result.action_ = action_;
+        result.desc_ = desc_;
         if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
           to_bitField0_ |= 0x00000010;
         }
-        result.expires_ = expires_;
+        result.action_ = action_;
         if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
           to_bitField0_ |= 0x00000020;
+        }
+        result.expires_ = expires_;
+        if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
+          to_bitField0_ |= 0x00000040;
         }
         result.hops_ = hops_;
         result.bitField0_ = to_bitField0_;
@@ -1894,14 +1941,17 @@ public final class Mgmt {
 
       public Builder mergeFrom(poke.core.Mgmt.LeaderElection other) {
         if (other == poke.core.Mgmt.LeaderElection.getDefaultInstance()) return this;
-        if (other.hasElectId()) {
-          setElectId(other.getElectId());
+        if (other.hasLastLogIndex()) {
+          setLastLogIndex(other.getLastLogIndex());
+        }
+        if (other.hasTermId()) {
+          setTermId(other.getTermId());
         }
         if (other.hasCandidateId()) {
           setCandidateId(other.getCandidateId());
         }
         if (other.hasDesc()) {
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000008;
           desc_ = other.desc_;
           onChanged();
         }
@@ -1919,7 +1969,11 @@ public final class Mgmt {
       }
 
       public final boolean isInitialized() {
-        if (!hasElectId()) {
+        if (!hasLastLogIndex()) {
+          
+          return false;
+        }
+        if (!hasTermId()) {
           
           return false;
         }
@@ -1953,50 +2007,82 @@ public final class Mgmt {
       }
       private int bitField0_;
 
-      private int electId_ ;
+      private int lastLogIndex_ ;
       /**
-       * <code>required int32 elect_id = 2;</code>
-       *
-       * <pre>
-       * election ID (not candidate)
-       * </pre>
+       * <code>required int32 last_log_index = 1;</code>
        */
-      public boolean hasElectId() {
+      public boolean hasLastLogIndex() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
-       * <code>required int32 elect_id = 2;</code>
-       *
-       * <pre>
-       * election ID (not candidate)
-       * </pre>
+       * <code>required int32 last_log_index = 1;</code>
        */
-      public int getElectId() {
-        return electId_;
+      public int getLastLogIndex() {
+        return lastLogIndex_;
       }
       /**
-       * <code>required int32 elect_id = 2;</code>
-       *
-       * <pre>
-       * election ID (not candidate)
-       * </pre>
+       * <code>required int32 last_log_index = 1;</code>
        */
-      public Builder setElectId(int value) {
+      public Builder setLastLogIndex(int value) {
         bitField0_ |= 0x00000001;
-        electId_ = value;
+        lastLogIndex_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required int32 elect_id = 2;</code>
+       * <code>required int32 last_log_index = 1;</code>
+       */
+      public Builder clearLastLogIndex() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        lastLogIndex_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int termId_ ;
+      /**
+       * <code>required int32 term_id = 2;</code>
        *
        * <pre>
-       * election ID (not candidate)
+       * term ID (not candidate)
        * </pre>
        */
-      public Builder clearElectId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        electId_ = 0;
+      public boolean hasTermId() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>required int32 term_id = 2;</code>
+       *
+       * <pre>
+       * term ID (not candidate)
+       * </pre>
+       */
+      public int getTermId() {
+        return termId_;
+      }
+      /**
+       * <code>required int32 term_id = 2;</code>
+       *
+       * <pre>
+       * term ID (not candidate)
+       * </pre>
+       */
+      public Builder setTermId(int value) {
+        bitField0_ |= 0x00000002;
+        termId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required int32 term_id = 2;</code>
+       *
+       * <pre>
+       * term ID (not candidate)
+       * </pre>
+       */
+      public Builder clearTermId() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        termId_ = 0;
         onChanged();
         return this;
       }
@@ -2006,7 +2092,7 @@ public final class Mgmt {
        * <code>required int32 candidate_id = 3;</code>
        */
       public boolean hasCandidateId() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
+        return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       /**
        * <code>required int32 candidate_id = 3;</code>
@@ -2018,7 +2104,7 @@ public final class Mgmt {
        * <code>required int32 candidate_id = 3;</code>
        */
       public Builder setCandidateId(int value) {
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         candidateId_ = value;
         onChanged();
         return this;
@@ -2027,7 +2113,7 @@ public final class Mgmt {
        * <code>required int32 candidate_id = 3;</code>
        */
       public Builder clearCandidateId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
         candidateId_ = 0;
         onChanged();
         return this;
@@ -2038,7 +2124,7 @@ public final class Mgmt {
        * <code>optional string desc = 4;</code>
        */
       public boolean hasDesc() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
+        return ((bitField0_ & 0x00000008) == 0x00000008);
       }
       /**
        * <code>optional string desc = 4;</code>
@@ -2081,7 +2167,7 @@ public final class Mgmt {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000004;
+  bitField0_ |= 0x00000008;
         desc_ = value;
         onChanged();
         return this;
@@ -2090,7 +2176,7 @@ public final class Mgmt {
        * <code>optional string desc = 4;</code>
        */
       public Builder clearDesc() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000008);
         desc_ = getDefaultInstance().getDesc();
         onChanged();
         return this;
@@ -2103,7 +2189,7 @@ public final class Mgmt {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000004;
+  bitField0_ |= 0x00000008;
         desc_ = value;
         onChanged();
         return this;
@@ -2114,7 +2200,7 @@ public final class Mgmt {
        * <code>required .LeaderElection.ElectAction action = 5;</code>
        */
       public boolean hasAction() {
-        return ((bitField0_ & 0x00000008) == 0x00000008);
+        return ((bitField0_ & 0x00000010) == 0x00000010);
       }
       /**
        * <code>required .LeaderElection.ElectAction action = 5;</code>
@@ -2129,7 +2215,7 @@ public final class Mgmt {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         action_ = value;
         onChanged();
         return this;
@@ -2138,7 +2224,7 @@ public final class Mgmt {
        * <code>required .LeaderElection.ElectAction action = 5;</code>
        */
       public Builder clearAction() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000010);
         action_ = poke.core.Mgmt.LeaderElection.ElectAction.DECLAREELECTION;
         onChanged();
         return this;
@@ -2153,7 +2239,7 @@ public final class Mgmt {
        * </pre>
        */
       public boolean hasExpires() {
-        return ((bitField0_ & 0x00000010) == 0x00000010);
+        return ((bitField0_ & 0x00000020) == 0x00000020);
       }
       /**
        * <code>optional int64 expires = 6 [default = -1];</code>
@@ -2173,7 +2259,7 @@ public final class Mgmt {
        * </pre>
        */
       public Builder setExpires(long value) {
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         expires_ = value;
         onChanged();
         return this;
@@ -2186,7 +2272,7 @@ public final class Mgmt {
        * </pre>
        */
       public Builder clearExpires() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000020);
         expires_ = -1L;
         onChanged();
         return this;
@@ -2204,7 +2290,7 @@ public final class Mgmt {
        * </pre>
        */
       public boolean hasHops() {
-        return ((bitField0_ & 0x00000020) == 0x00000020);
+        return ((bitField0_ & 0x00000040) == 0x00000040);
       }
       /**
        * <code>optional int32 hops = 7 [default = -1];</code>
@@ -2230,7 +2316,7 @@ public final class Mgmt {
        * </pre>
        */
       public Builder setHops(int value) {
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         hops_ = value;
         onChanged();
         return this;
@@ -2246,7 +2332,7 @@ public final class Mgmt {
        * </pre>
        */
       public Builder clearHops() {
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000040);
         hops_ = -1;
         onChanged();
         return this;
@@ -8887,37 +8973,37 @@ public final class Mgmt {
       "ork.NetworkAction\"f\n\rNetworkAction\022\014\n\010NO" +
       "DEJOIN\020\001\022\r\n\tNODELEAVE\020\002\022\014\n\010NODEDEAD\020\003\022\r\n" +
       "\tCREATEMAP\0207\022\014\n\010ANNOUNCE\0208\022\r\n\010SHUTDOWN\020\347" +
-      "\007\"\243\002\n\016LeaderElection\022\020\n\010elect_id\030\002 \002(\005\022\024" +
-      "\n\014candidate_id\030\003 \002(\005\022\014\n\004desc\030\004 \001(\t\022+\n\006ac" +
-      "tion\030\005 \002(\0162\033.LeaderElection.ElectAction\022" +
-      "\023\n\007expires\030\006 \001(\003:\002-1\022\020\n\004hops\030\007 \001(\005:\002-1\"\206",
-      "\001\n\013ElectAction\022\023\n\017DECLAREELECTION\020\001\022\014\n\010N" +
-      "OMINATE\020\002\022\013\n\007ABSTAIN\020\003\022\021\n\rDECLAREWINNER\020" +
-      "\004\022\017\n\013DECLAREVOID\020\005\022\022\n\016WHOISTHELEADER\020\006\022\017" +
-      "\n\013THELEADERIS\020\007\"\200\002\n\014VotingBallot\022\021\n\tball" +
-      "ot_id\030\001 \002(\t\022\014\n\004desc\030\002 \002(\t\022/\n\rballot_form" +
-      "at\030\003 \002(\0162\030.VotingBallot.BallotType\022\023\n\013ex" +
-      "pires_sec\030\006 \001(\003\022\025\n\rmargin_to_win\030\007 \001(\005\022\024" +
-      "\n\010max_hops\030\010 \001(\005:\002-1\"\\\n\nBallotType\022\022\n\016SI" +
-      "MPLEMAJORITY\020\001\022\033\n\027TIMECONSTRAINEDMAJORIT" +
-      "Y\020\002\022\n\n\006RANKED\020\003\022\021\n\rINSTANTRUNOFF\020\004\"O\n\nVo",
-      "tingCast\022\r\n\005voter\030\001 \002(\t\022\021\n\tballot_id\030\002 \002" +
-      "(\t\022\021\n\tcandidate\030\n \001(\005\022\014\n\004rank\030\013 \001(\005\"\220\001\n\014" +
-      "VotingStatus\022\021\n\tballot_id\030\001 \002(\t\022(\n\006statu" +
-      "s\030\002 \002(\0162\030.VotingStatus.VoteStatus\022\016\n\006win" +
-      "ner\030\003 \001(\005\"3\n\nVoteStatus\022\023\n\017BALLOTABANDON" +
-      "ED\020\001\022\020\n\014BALLOTWINNER\020\002\"=\n\013VectorClock\022\017\n" +
-      "\007node_id\030\001 \002(\005\022\017\n\007version\030\002 \002(\005\022\014\n\004time\030" +
-      "\003 \002(\003\"p\n\nMgmtHeader\022\022\n\noriginator\030\002 \002(\005\022" +
-      "\024\n\014securityCode\030\003 \002(\005\022\014\n\004time\030\004 \002(\003\022\032\n\004p" +
-      "ath\030\007 \003(\0132\014.VectorClock\022\016\n\006toNode\030\010 \001(\005\"",
-      "\350\001\n\nManagement\022\033\n\006header\030\001 \002(\0132\013.MgmtHea" +
-      "der\022\027\n\005graph\030\002 \001(\0132\010.Network\022\030\n\004beat\030\003 \001" +
-      "(\0132\n.Heartbeat\022!\n\010election\030\004 \001(\0132\017.Leade" +
-      "rElection\022#\n\014vote_declare\030\007 \001(\0132\r.Voting" +
-      "Ballot\022\036\n\tvote_cast\030\010 \001(\0132\013.VotingCast\022\"" +
-      "\n\013vote_status\030\t \001(\0132\r.VotingStatusB\r\n\tpo" +
-      "ke.coreH\001"
+      "\007\"\272\002\n\016LeaderElection\022\026\n\016last_log_index\030\001" +
+      " \002(\005\022\017\n\007term_id\030\002 \002(\005\022\024\n\014candidate_id\030\003 " +
+      "\002(\005\022\014\n\004desc\030\004 \001(\t\022+\n\006action\030\005 \002(\0162\033.Lead" +
+      "erElection.ElectAction\022\023\n\007expires\030\006 \001(\003:",
+      "\002-1\022\020\n\004hops\030\007 \001(\005:\002-1\"\206\001\n\013ElectAction\022\023\n" +
+      "\017DECLAREELECTION\020\001\022\014\n\010NOMINATE\020\002\022\013\n\007ABST" +
+      "AIN\020\003\022\021\n\rDECLAREWINNER\020\004\022\017\n\013DECLAREVOID\020" +
+      "\005\022\022\n\016WHOISTHELEADER\020\006\022\017\n\013THELEADERIS\020\007\"\200" +
+      "\002\n\014VotingBallot\022\021\n\tballot_id\030\001 \002(\t\022\014\n\004de" +
+      "sc\030\002 \002(\t\022/\n\rballot_format\030\003 \002(\0162\030.Voting" +
+      "Ballot.BallotType\022\023\n\013expires_sec\030\006 \001(\003\022\025" +
+      "\n\rmargin_to_win\030\007 \001(\005\022\024\n\010max_hops\030\010 \001(\005:" +
+      "\002-1\"\\\n\nBallotType\022\022\n\016SIMPLEMAJORITY\020\001\022\033\n" +
+      "\027TIMECONSTRAINEDMAJORITY\020\002\022\n\n\006RANKED\020\003\022\021",
+      "\n\rINSTANTRUNOFF\020\004\"O\n\nVotingCast\022\r\n\005voter" +
+      "\030\001 \002(\t\022\021\n\tballot_id\030\002 \002(\t\022\021\n\tcandidate\030\n" +
+      " \001(\005\022\014\n\004rank\030\013 \001(\005\"\220\001\n\014VotingStatus\022\021\n\tb" +
+      "allot_id\030\001 \002(\t\022(\n\006status\030\002 \002(\0162\030.VotingS" +
+      "tatus.VoteStatus\022\016\n\006winner\030\003 \001(\005\"3\n\nVote" +
+      "Status\022\023\n\017BALLOTABANDONED\020\001\022\020\n\014BALLOTWIN" +
+      "NER\020\002\"=\n\013VectorClock\022\017\n\007node_id\030\001 \002(\005\022\017\n" +
+      "\007version\030\002 \002(\005\022\014\n\004time\030\003 \002(\003\"p\n\nMgmtHead" +
+      "er\022\022\n\noriginator\030\002 \002(\005\022\024\n\014securityCode\030\003" +
+      " \002(\005\022\014\n\004time\030\004 \002(\003\022\032\n\004path\030\007 \003(\0132\014.Vecto",
+      "rClock\022\016\n\006toNode\030\010 \001(\005\"\350\001\n\nManagement\022\033\n" +
+      "\006header\030\001 \002(\0132\013.MgmtHeader\022\027\n\005graph\030\002 \001(" +
+      "\0132\010.Network\022\030\n\004beat\030\003 \001(\0132\n.Heartbeat\022!\n" +
+      "\010election\030\004 \001(\0132\017.LeaderElection\022#\n\014vote" +
+      "_declare\030\007 \001(\0132\r.VotingBallot\022\036\n\tvote_ca" +
+      "st\030\010 \001(\0132\013.VotingCast\022\"\n\013vote_status\030\t \001" +
+      "(\0132\r.VotingStatusB\r\n\tpoke.coreH\001"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -8948,7 +9034,7 @@ public final class Mgmt {
     internal_static_LeaderElection_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_LeaderElection_descriptor,
-        new java.lang.String[] { "ElectId", "CandidateId", "Desc", "Action", "Expires", "Hops", });
+        new java.lang.String[] { "LastLogIndex", "TermId", "CandidateId", "Desc", "Action", "Expires", "Hops", });
     internal_static_VotingBallot_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_VotingBallot_fieldAccessorTable = new

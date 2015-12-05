@@ -1,4 +1,3 @@
-
 option optimize_for = SPEED;
 option java_package = "poke.core";
 
@@ -22,7 +21,8 @@ message Network {
 }
 
 message LeaderElection {
-   required int32 elect_id = 2; // election ID (not candidate)
+   required int32 last_log_index = 1;
+   required int32 term_id = 2; // term ID (not candidate)
    required int32 candidate_id = 3;
    optional string desc = 4;
    required ElectAction action = 5;
@@ -138,4 +138,4 @@ message Management {
    optional VotingBallot vote_declare = 7;
    optional VotingCast vote_cast = 8;
    optional VotingStatus vote_status = 9;
-}	
+}

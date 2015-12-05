@@ -30,6 +30,7 @@ import poke.core.Mgmt.MgmtHeader;
  * @author gash
  * 
  */
+/*
 public class MgmtClientCommand {
 	protected static Logger logger = LoggerFactory.getLogger("client");
 
@@ -55,6 +56,7 @@ public class MgmtClientCommand {
 	 * 
 	 * @param listener
 	 */
+/*
 	public void addListener(MgmtListener listener) {
 		comm.addListener(listener);
 	}
@@ -85,3 +87,4 @@ public class MgmtClientCommand {
 		}
 	}
 }
+*/

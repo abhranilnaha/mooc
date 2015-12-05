@@ -15,9 +15,10 @@
  */
 package poke.demo;
 
-import poke.server.management.client.MgmtClientCommand;
+/*import poke.server.management.client.MgmtClientCommand;
 import poke.server.management.client.MgmtListener;
 import poke.server.management.client.MgmtPrintListener;
+*/
 
 /**
  * DEMO: how to use the command class
@@ -27,7 +28,7 @@ import poke.server.management.client.MgmtPrintListener;
  */
 public class StartElection {
 
-	public StartElection(String ip, int port) {
+	/*public StartElection(String ip, int port) {
 
 		MgmtClientCommand cc = new MgmtClientCommand(ip, port);
 		MgmtListener listener = new MgmtPrintListener("demo");
@@ -56,4 +57,6 @@ public class StartElection {
 			e.printStackTrace();
 		}
 	}
+	*/
 }
+

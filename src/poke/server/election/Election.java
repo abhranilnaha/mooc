@@ -53,15 +53,16 @@ public interface Election {
 	 * 
 	 * @return
 	 */
-	Integer getElectionId();
+	//Integer getElectionId();
+	Integer getTermId();
 
 	/**
 	 * create the election ID for messaging
 	 * 
 	 * @return
 	 */
-	Integer createElectionID();
-
+	//Integer createElectionID();
+	Integer createTermId();
 	/**
 	 * The winner of the election
 	 * 

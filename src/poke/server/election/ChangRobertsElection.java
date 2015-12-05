@@ -46,6 +46,7 @@ import poke.core.Mgmt.VectorClock;
  * @author gash
  * 
  */
+/*
 public class ChangRobertsElection implements Election {
 	protected static Logger logger = LoggerFactory.getLogger("changroberts");
 
@@ -66,18 +67,19 @@ public class ChangRobertsElection implements Election {
 	 * @see poke.server.election.Election#setListener(poke.server.election.
 	 * ElectionListener)
 	 */
-	@Override
+	/*@Override
 	public void setListener(ElectionListener listener) {
 		this.listener = listener;
 	}
+	
 
 	/*
 	 * (non-Javadoc)
 	 * 
 	 * @see poke.server.election.Election#process(eye.Comm.LeaderElection)
-	 */
+	 
 	@Override
-	public Management process(Management mgmt) {
+	/*public Management process(Management mgmt) {
 		LeaderElection req = mgmt.getElection();
 		if (req == null)
 			return null;
@@ -239,4 +241,5 @@ public class ChangRobertsElection implements Election {
 	 * challengeWait = 0; challengeLeader = Message.sNobody; } else { // normal
 	 * message processing goes here } }
 	 */
-}
+/*}
+ * */
