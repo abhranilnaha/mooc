@@ -19,7 +19,7 @@ _sym_db = _symbol_database.Default()
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='comm.proto',
   package='',
-  serialized_pb=_b('\n\ncomm.proto\"\x94\x01\n\x0cNameValueSet\x12)\n\tnode_type\x18\x01 \x02(\x0e\x32\x16.NameValueSet.NodeType\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\r\n\x05value\x18\x03 \x01(\t\x12\x1b\n\x04node\x18\x04 \x03(\x0b\x32\r.NameValueSet\"\x1f\n\x08NodeType\x12\x08\n\x04NODE\x10\x01\x12\t\n\x05VALUE\x10\x02\"\x94\x01\n\tNameSpace\x12\x11\n\x05ns_id\x18\x02 \x02(\x03:\x02-1\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x0c\n\x04\x64\x65sc\x18\x04 \x01(\t\x12\x0f\n\x07\x63reated\x18\x05 \x01(\x03\x12\x15\n\rlast_modified\x18\x06 \x01(\x03\x12\r\n\x05owner\x18\x07 \x01(\t\x12!\n\nproperties\x18\x08 \x01(\x0b\x32\r.NameValueSet\"\x8b\x02\n\nCourseDesc\x12\x12\n\nname_space\x18\x01 \x02(\t\x12\x10\n\x08owner_id\x18\x02 \x02(\x03\x12\x11\n\tcourse_id\x18\x03 \x02(\t\x12&\n\x06status\x18\x04 \x02(\x0e\x32\x16.CourseDesc.CourseCode\x12\x1e\n\x07options\x18\x05 \x01(\x0b\x32\r.NameValueSet\"|\n\nCourseCode\x12\x11\n\rCOURSEUNKNOWN\x10\x01\x12\x12\n\x0e\x43OURSERECEIVED\x10\x02\x12\x10\n\x0c\x43OURSEQUEUED\x10\x03\x12\x11\n\rCOURSERUNNING\x10\x04\x12\x10\n\x0c\x43OURSEKILLED\x10\x64\x12\x10\n\x0c\x43OURSEFAILED\x10\x65\"#\n\x04Ping\x12\x0e\n\x06number\x18\x01 \x02(\x05\x12\x0b\n\x03tag\x18\x02 \x02(\t\"\xe1\x01\n\x12NameSpaceOperation\x12/\n\x06\x61\x63tion\x18\x01 \x02(\x0e\x32\x1f.NameSpaceOperation.SpaceAction\x12\x11\n\x05ns_id\x18\x02 \x01(\x03:\x02-1\x12\x18\n\x04\x64\x61ta\x18\x03 \x01(\x0b\x32\n.NameSpace\x12\x1e\n\x07options\x18\x04 \x01(\x0b\x32\r.NameValueSet\"M\n\x0bSpaceAction\x12\x0c\n\x08\x41\x44\x44SPACE\x10\x01\x12\x0f\n\x0bUPDATESPACE\x10\x02\x12\x0f\n\x0bREMOVESPACE\x10\x03\x12\x0e\n\nLISTSPACES\x10\x04\"H\n\x0fNameSpaceStatus\x12\x1b\n\x06status\x18\x01 \x02(\x0e\x32\x0b.PokeStatus\x12\x18\n\x04\x64\x61ta\x18\x02 \x03(\x0b\x32\n.NameSpace\"\xc0\x01\n\x0f\x43ourseOperation\x12-\n\x06\x61\x63tion\x18\x01 \x02(\x0e\x32\x1d.CourseOperation.CourseAction\x12\x11\n\tcourse_id\x18\x02 \x01(\t\x12\x19\n\x04\x64\x61ta\x18\x03 \x01(\x0b\x32\x0b.CourseDesc\"P\n\x0c\x43ourseAction\x12\r\n\tADDCOURSE\x10\x01\x12\x0e\n\nSTOPCOURSE\x10\x02\x12\x10\n\x0cREMOVECOURSE\x10\x03\x12\x0f\n\x0bLISTCOURSES\x10\x04\"y\n\x0e\x43ourseProposal\x12\x12\n\nname_space\x18\x01 \x02(\t\x12\x10\n\x08owner_id\x18\x02 \x02(\x03\x12\x11\n\tcourse_id\x18\x03 \x02(\t\x12\x0e\n\x06weight\x18\x04 \x02(\x05\x12\x1e\n\x07options\x18\x05 \x01(\x0b\x32\r.NameValueSet\"Q\n\tCourseBid\x12\x12\n\nname_space\x18\x01 \x02(\t\x12\x10\n\x08owner_id\x18\x02 \x02(\x03\x12\x11\n\tcourse_id\x18\x03 \x02(\t\x12\x0b\n\x03\x62id\x18\x04 \x02(\x05\"\x87\x01\n\x0c\x43ourseStatus\x12\x11\n\tcourse_id\x18\x01 \x02(\t\x12\x1b\n\x06status\x18\x02 \x02(\x0e\x32\x0b.PokeStatus\x12,\n\x0c\x63ourse_state\x18\x03 \x02(\x0e\x32\x16.CourseDesc.CourseCode\x12\x19\n\x04\x64\x61ta\x18\x04 \x03(\x0b\x32\x0b.CourseDesc\")\n\x0bRoutingPath\x12\x0c\n\x04node\x18\x01 \x02(\t\x12\x0c\n\x04time\x18\x02 \x02(\x03\"\xa7\x02\n\x06Header\x12#\n\nrouting_id\x18\x01 \x02(\x0e\x32\x0f.Header.Routing\x12\x12\n\noriginator\x18\x02 \x02(\t\x12\x0b\n\x03tag\x18\x03 \x01(\t\x12\x0c\n\x04time\x18\x04 \x01(\x03\x12\x1f\n\nreply_code\x18\x05 \x01(\x0e\x32\x0b.PokeStatus\x12\x11\n\treply_msg\x18\x06 \x01(\t\x12\x1a\n\x04path\x18\x07 \x03(\x0b\x32\x0c.RoutingPath\x12\x0e\n\x06toNode\x18\x08 \x01(\t\x12\x1e\n\x07options\x18\t \x03(\x0b\x32\r.NameValueSet\"I\n\x07Routing\x12\x08\n\x04PING\x10\x02\x12\x0e\n\nNAMESPACES\x10\x03\x12\x0b\n\x07\x43OURSES\x10\x04\x12\x0b\n\x07REPORTS\x10\n\x12\n\n\x06MANAGE\x10\x64\"\xb8\x01\n\x07Payload\x12\x13\n\x04ping\x18\x01 \x01(\x0b\x32\x05.Ping\x12%\n\x08space_op\x18\x02 \x01(\x0b\x32\x13.NameSpaceOperation\x12#\n\tcourse_op\x18\x03 \x01(\x0b\x32\x10.CourseOperation\x12$\n\rcourse_status\x18\x06 \x01(\x0b\x32\r.CourseStatus\x12&\n\x0cspace_status\x18\x07 \x01(\x0b\x32\x10.NameSpaceStatus\":\n\x07Request\x12\x17\n\x06header\x18\x01 \x02(\x0b\x32\x07.Header\x12\x16\n\x04\x62ody\x18\x02 \x02(\x0b\x32\x08.Payload\".\n\tHeartbeat\x12\x0f\n\x07node_id\x18\x01 \x02(\t\x12\x10\n\x08time_ref\x18\x02 \x02(\x03\"\xaa\x01\n\x07Network\x12\x0f\n\x07node_id\x18\x01 \x02(\t\x12&\n\x06\x61\x63tion\x18\x02 \x02(\x0e\x32\x16.Network.NetworkAction\"f\n\rNetworkAction\x12\x0c\n\x08NODEJOIN\x10\x01\x12\r\n\tNODELEAVE\x10\x02\x12\x0c\n\x08NODEDEAD\x10\x03\x12\r\n\tCREATEMAP\x10\x37\x12\x0c\n\x08\x41NNOUNCE\x10\x38\x12\r\n\x08SHUTDOWN\x10\xe7\x07\"\xe4\x01\n\x0eLeaderElection\x12\x0f\n\x07node_id\x18\x01 \x02(\t\x12\x11\n\tballot_id\x18\x02 \x02(\t\x12\x0c\n\x04\x64\x65sc\x18\x04 \x02(\t\x12(\n\x04vote\x18\x05 \x02(\x0e\x32\x1a.LeaderElection.VoteAction\x12\x0f\n\x07\x65xpires\x18\x06 \x01(\x03\"e\n\nVoteAction\x12\x0c\n\x08\x45LECTION\x10\x01\x12\x0c\n\x08NOMINATE\x10\x02\x12\x0b\n\x07\x41\x42STAIN\x10\x03\x12\x11\n\rDECLAREWINNER\x10\x04\x12\x0f\n\x0b\x44\x45\x43LAREVOID\x10\x05\x12\n\n\x06LEADER\x10\x06\"\xab\x01\n\nManagement\x12\x17\n\x05graph\x18\x01 \x01(\x0b\x32\x08.Network\x12\x18\n\x04\x62\x65\x61t\x18\x02 \x01(\x0b\x32\n.Heartbeat\x12!\n\x08\x65lection\x18\x03 \x01(\x0b\x32\x0f.LeaderElection\x12\'\n\x0e\x63ourse_propose\x18\x04 \x01(\x0b\x32\x0f.CourseProposal\x12\x1e\n\ncourse_bid\x18\x05 \x01(\x0b\x32\n.CourseBid*\x91\x01\n\nPokeStatus\x12\n\n\x06UKNOWN\x10\x01\x12\x0b\n\x07SUCCESS\x10\x02\x12\x0b\n\x07NOFOUND\x10\x64\x12\x10\n\x0cNOINCOMPLETE\x10\x65\x12\n\n\x06NOAUTH\x10\x66\x12\x10\n\x0cNOCONNECTION\x10g\x12\x0f\n\x0bNOREACHABLE\x10h\x12\x0e\n\nNORESOURCE\x10i\x12\x0c\n\x07\x46\x41ILURE\x10\xc7\x01\x42\x08\n\x04moocH\x01')
+  serialized_pb=_b('\n\ncomm.proto\"\x94\x01\n\x0cNameValueSet\x12)\n\tnode_type\x18\x01 \x02(\x0e\x32\x16.NameValueSet.NodeType\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\r\n\x05value\x18\x03 \x01(\t\x12\x1b\n\x04node\x18\x04 \x03(\x0b\x32\r.NameValueSet\"\x1f\n\x08NodeType\x12\x08\n\x04NODE\x10\x01\x12\t\n\x05VALUE\x10\x02\"\x94\x01\n\tNameSpace\x12\x11\n\x05ns_id\x18\x02 \x02(\x03:\x02-1\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x0c\n\x04\x64\x65sc\x18\x04 \x01(\t\x12\x0f\n\x07\x63reated\x18\x05 \x01(\x03\x12\x15\n\rlast_modified\x18\x06 \x01(\x03\x12\r\n\x05owner\x18\x07 \x01(\t\x12!\n\nproperties\x18\x08 \x01(\x0b\x32\r.NameValueSet\"\xea\x01\n\x07JobDesc\x12\x12\n\nname_space\x18\x01 \x02(\t\x12\x10\n\x08owner_id\x18\x02 \x02(\x03\x12\x0e\n\x06job_id\x18\x03 \x02(\t\x12 \n\x06status\x18\x04 \x02(\x0e\x32\x10.JobDesc.JobCode\x12\x1e\n\x07options\x18\x05 \x01(\x0b\x32\r.NameValueSet\"g\n\x07JobCode\x12\x0e\n\nJOBUNKNOWN\x10\x01\x12\x0f\n\x0bJOBRECEIVED\x10\x02\x12\r\n\tJOBQUEUED\x10\x03\x12\x0e\n\nJOBRUNNING\x10\x04\x12\r\n\tJOBKILLED\x10\x64\x12\r\n\tJOBFAILED\x10\x65\"#\n\x04Ping\x12\x0e\n\x06number\x18\x01 \x02(\x05\x12\x0b\n\x03tag\x18\x02 \x02(\t\"\xe1\x01\n\x12NameSpaceOperation\x12/\n\x06\x61\x63tion\x18\x01 \x02(\x0e\x32\x1f.NameSpaceOperation.SpaceAction\x12\x11\n\x05ns_id\x18\x02 \x01(\x03:\x02-1\x12\x18\n\x04\x64\x61ta\x18\x03 \x01(\x0b\x32\n.NameSpace\x12\x1e\n\x07options\x18\x04 \x01(\x0b\x32\r.NameValueSet\"M\n\x0bSpaceAction\x12\x0c\n\x08\x41\x44\x44SPACE\x10\x01\x12\x0f\n\x0bUPDATESPACE\x10\x02\x12\x0f\n\x0bREMOVESPACE\x10\x03\x12\x0e\n\nLISTSPACES\x10\x04\"H\n\x0fNameSpaceStatus\x12\x1b\n\x06status\x18\x01 \x02(\x0e\x32\x0b.PokeStatus\x12\x18\n\x04\x64\x61ta\x18\x02 \x03(\x0b\x32\n.NameSpace\"\xa2\x01\n\x0cJobOperation\x12\'\n\x06\x61\x63tion\x18\x01 \x02(\x0e\x32\x17.JobOperation.JobAction\x12\x0e\n\x06job_id\x18\x02 \x01(\t\x12\x16\n\x04\x64\x61ta\x18\x03 \x01(\x0b\x32\x08.JobDesc\"A\n\tJobAction\x12\n\n\x06\x41\x44\x44JOB\x10\x01\x12\x0b\n\x07STOPJOB\x10\x02\x12\r\n\tREMOVEJOB\x10\x03\x12\x0c\n\x08LISTJOBS\x10\x04\"s\n\x0bJobProposal\x12\x12\n\nname_space\x18\x01 \x02(\t\x12\x10\n\x08owner_id\x18\x02 \x02(\x03\x12\x0e\n\x06job_id\x18\x03 \x02(\t\x12\x0e\n\x06weight\x18\x04 \x02(\x05\x12\x1e\n\x07options\x18\x05 \x01(\x0b\x32\r.NameValueSet\"K\n\x06JobBid\x12\x12\n\nname_space\x18\x01 \x02(\t\x12\x10\n\x08owner_id\x18\x02 \x02(\x03\x12\x0e\n\x06job_id\x18\x03 \x02(\t\x12\x0b\n\x03\x62id\x18\x04 \x02(\x05\"u\n\tJobStatus\x12\x0e\n\x06job_id\x18\x01 \x02(\t\x12\x1b\n\x06status\x18\x02 \x02(\x0e\x32\x0b.PokeStatus\x12#\n\tjob_state\x18\x03 \x02(\x0e\x32\x10.JobDesc.JobCode\x12\x16\n\x04\x64\x61ta\x18\x04 \x03(\x0b\x32\x08.JobDesc\")\n\x0bRoutingPath\x12\x0c\n\x04node\x18\x01 \x02(\t\x12\x0c\n\x04time\x18\x02 \x02(\x03\"\xa4\x02\n\x06Header\x12#\n\nrouting_id\x18\x01 \x02(\x0e\x32\x0f.Header.Routing\x12\x12\n\noriginator\x18\x02 \x02(\t\x12\x0b\n\x03tag\x18\x03 \x01(\t\x12\x0c\n\x04time\x18\x04 \x01(\x03\x12\x1f\n\nreply_code\x18\x05 \x01(\x0e\x32\x0b.PokeStatus\x12\x11\n\treply_msg\x18\x06 \x01(\t\x12\x1a\n\x04path\x18\x07 \x03(\x0b\x32\x0c.RoutingPath\x12\x0e\n\x06toNode\x18\x08 \x01(\t\x12\x1e\n\x07options\x18\t \x03(\x0b\x32\r.NameValueSet\"F\n\x07Routing\x12\x08\n\x04PING\x10\x02\x12\x0e\n\nNAMESPACES\x10\x03\x12\x08\n\x04JOBS\x10\x04\x12\x0b\n\x07REPORTS\x10\n\x12\n\n\x06MANAGE\x10\x64\"\xac\x01\n\x07Payload\x12\x13\n\x04ping\x18\x01 \x01(\x0b\x32\x05.Ping\x12%\n\x08space_op\x18\x02 \x01(\x0b\x32\x13.NameSpaceOperation\x12\x1d\n\x06job_op\x18\x03 \x01(\x0b\x32\r.JobOperation\x12\x1e\n\njob_status\x18\x06 \x01(\x0b\x32\n.JobStatus\x12&\n\x0cspace_status\x18\x07 \x01(\x0b\x32\x10.NameSpaceStatus\":\n\x07Request\x12\x17\n\x06header\x18\x01 \x02(\x0b\x32\x07.Header\x12\x16\n\x04\x62ody\x18\x02 \x02(\x0b\x32\x08.Payload\".\n\tHeartbeat\x12\x0f\n\x07node_id\x18\x01 \x02(\t\x12\x10\n\x08time_ref\x18\x02 \x02(\x03\"\xaa\x01\n\x07Network\x12\x0f\n\x07node_id\x18\x01 \x02(\t\x12&\n\x06\x61\x63tion\x18\x02 \x02(\x0e\x32\x16.Network.NetworkAction\"f\n\rNetworkAction\x12\x0c\n\x08NODEJOIN\x10\x01\x12\r\n\tNODELEAVE\x10\x02\x12\x0c\n\x08NODEDEAD\x10\x03\x12\r\n\tCREATEMAP\x10\x37\x12\x0c\n\x08\x41NNOUNCE\x10\x38\x12\r\n\x08SHUTDOWN\x10\xe7\x07\"\xe4\x01\n\x0eLeaderElection\x12\x0f\n\x07node_id\x18\x01 \x02(\t\x12\x11\n\tballot_id\x18\x02 \x02(\t\x12\x0c\n\x04\x64\x65sc\x18\x04 \x02(\t\x12(\n\x04vote\x18\x05 \x02(\x0e\x32\x1a.LeaderElection.VoteAction\x12\x0f\n\x07\x65xpires\x18\x06 \x01(\x03\"e\n\nVoteAction\x12\x0c\n\x08\x45LECTION\x10\x01\x12\x0c\n\x08NOMINATE\x10\x02\x12\x0b\n\x07\x41\x42STAIN\x10\x03\x12\x11\n\rDECLAREWINNER\x10\x04\x12\x0f\n\x0b\x44\x45\x43LAREVOID\x10\x05\x12\n\n\x06LEADER\x10\x06\"\x9f\x01\n\nManagement\x12\x17\n\x05graph\x18\x01 \x01(\x0b\x32\x08.Network\x12\x18\n\x04\x62\x65\x61t\x18\x02 \x01(\x0b\x32\n.Heartbeat\x12!\n\x08\x65lection\x18\x03 \x01(\x0b\x32\x0f.LeaderElection\x12!\n\x0bjob_propose\x18\x04 \x01(\x0b\x32\x0c.JobProposal\x12\x18\n\x07job_bid\x18\x05 \x01(\x0b\x32\x07.JobBid*\x91\x01\n\nPokeStatus\x12\n\n\x06UKNOWN\x10\x01\x12\x0b\n\x07SUCCESS\x10\x02\x12\x0b\n\x07NOFOUND\x10\x64\x12\x10\n\x0cNOINCOMPLETE\x10\x65\x12\n\n\x06NOAUTH\x10\x66\x12\x10\n\x0cNOCONNECTION\x10g\x12\x0f\n\x0bNOREACHABLE\x10h\x12\x0e\n\nNORESOURCE\x10i\x12\x0c\n\x07\x46\x41ILURE\x10\xc7\x01\x42\x07\n\x03\x65yeH\x01')
 )
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -68,8 +68,8 @@ _POKESTATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=2679,
-  serialized_end=2824,
+  serialized_start=2558,
+  serialized_end=2703,
 )
 _sym_db.RegisterEnumDescriptor(_POKESTATUS)
 
@@ -107,43 +107,43 @@ _NAMEVALUESET_NODETYPE = _descriptor.EnumDescriptor(
 )
 _sym_db.RegisterEnumDescriptor(_NAMEVALUESET_NODETYPE)
 
-_COURSEDESC_COURSECODE = _descriptor.EnumDescriptor(
-  name='CourseCode',
-  full_name='CourseDesc.CourseCode',
+_JOBDESC_JOBCODE = _descriptor.EnumDescriptor(
+  name='JobCode',
+  full_name='JobDesc.JobCode',
   filename=None,
   file=DESCRIPTOR,
   values=[
     _descriptor.EnumValueDescriptor(
-      name='COURSEUNKNOWN', index=0, number=1,
+      name='JOBUNKNOWN', index=0, number=1,
       options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='COURSERECEIVED', index=1, number=2,
+      name='JOBRECEIVED', index=1, number=2,
       options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='COURSEQUEUED', index=2, number=3,
+      name='JOBQUEUED', index=2, number=3,
       options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='COURSERUNNING', index=3, number=4,
+      name='JOBRUNNING', index=3, number=4,
       options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='COURSEKILLED', index=4, number=100,
+      name='JOBKILLED', index=4, number=100,
       options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='COURSEFAILED', index=5, number=101,
+      name='JOBFAILED', index=5, number=101,
       options=None,
       type=None),
   ],
   containing_type=None,
   options=None,
-  serialized_start=460,
-  serialized_end=584,
+  serialized_start=448,
+  serialized_end=551,
 )
-_sym_db.RegisterEnumDescriptor(_COURSEDESC_COURSECODE)
+_sym_db.RegisterEnumDescriptor(_JOBDESC_JOBCODE)
 
 _NAMESPACEOPERATION_SPACEACTION = _descriptor.EnumDescriptor(
   name='SpaceAction',
@@ -170,40 +170,40 @@ _NAMESPACEOPERATION_SPACEACTION = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=772,
-  serialized_end=849,
+  serialized_start=739,
+  serialized_end=816,
 )
 _sym_db.RegisterEnumDescriptor(_NAMESPACEOPERATION_SPACEACTION)
 
-_COURSEOPERATION_COURSEACTION = _descriptor.EnumDescriptor(
-  name='CourseAction',
-  full_name='CourseOperation.CourseAction',
+_JOBOPERATION_JOBACTION = _descriptor.EnumDescriptor(
+  name='JobAction',
+  full_name='JobOperation.JobAction',
   filename=None,
   file=DESCRIPTOR,
   values=[
     _descriptor.EnumValueDescriptor(
-      name='ADDCOURSE', index=0, number=1,
+      name='ADDJOB', index=0, number=1,
       options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='STOPCOURSE', index=1, number=2,
+      name='STOPJOB', index=1, number=2,
       options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='REMOVECOURSE', index=2, number=3,
+      name='REMOVEJOB', index=2, number=3,
       options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='LISTCOURSES', index=3, number=4,
+      name='LISTJOBS', index=3, number=4,
       options=None,
       type=None),
   ],
   containing_type=None,
   options=None,
-  serialized_start=1038,
-  serialized_end=1118,
+  serialized_start=990,
+  serialized_end=1055,
 )
-_sym_db.RegisterEnumDescriptor(_COURSEOPERATION_COURSEACTION)
+_sym_db.RegisterEnumDescriptor(_JOBOPERATION_JOBACTION)
 
 _HEADER_ROUTING = _descriptor.EnumDescriptor(
   name='Routing',
@@ -220,7 +220,7 @@ _HEADER_ROUTING = _descriptor.EnumDescriptor(
       options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='COURSES', index=2, number=4,
+      name='JOBS', index=2, number=4,
       options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
@@ -234,8 +234,8 @@ _HEADER_ROUTING = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=1730,
-  serialized_end=1803,
+  serialized_start=1636,
+  serialized_end=1706,
 )
 _sym_db.RegisterEnumDescriptor(_HEADER_ROUTING)
 
@@ -272,8 +272,8 @@ _NETWORK_NETWORKACTION = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=2169,
-  serialized_end=2271,
+  serialized_start=2060,
+  serialized_end=2162,
 )
 _sym_db.RegisterEnumDescriptor(_NETWORK_NETWORKACTION)
 
@@ -310,8 +310,8 @@ _LEADERELECTION_VOTEACTION = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=2401,
-  serialized_end=2502,
+  serialized_start=2292,
+  serialized_end=2393,
 )
 _sym_db.RegisterEnumDescriptor(_LEADERELECTION_VOTEACTION)
 
@@ -440,43 +440,43 @@ _NAMESPACE = _descriptor.Descriptor(
 )
 
 
-_COURSEDESC = _descriptor.Descriptor(
-  name='CourseDesc',
-  full_name='CourseDesc',
+_JOBDESC = _descriptor.Descriptor(
+  name='JobDesc',
+  full_name='JobDesc',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='name_space', full_name='CourseDesc.name_space', index=0,
+      name='name_space', full_name='JobDesc.name_space', index=0,
       number=1, type=9, cpp_type=9, label=2,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='owner_id', full_name='CourseDesc.owner_id', index=1,
+      name='owner_id', full_name='JobDesc.owner_id', index=1,
       number=2, type=3, cpp_type=2, label=2,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='course_id', full_name='CourseDesc.course_id', index=2,
+      name='job_id', full_name='JobDesc.job_id', index=2,
       number=3, type=9, cpp_type=9, label=2,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='status', full_name='CourseDesc.status', index=3,
+      name='status', full_name='JobDesc.status', index=3,
       number=4, type=14, cpp_type=8, label=2,
       has_default_value=False, default_value=1,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='options', full_name='CourseDesc.options', index=4,
+      name='options', full_name='JobDesc.options', index=4,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -487,7 +487,7 @@ _COURSEDESC = _descriptor.Descriptor(
   ],
   nested_types=[],
   enum_types=[
-    _COURSEDESC_COURSECODE,
+    _JOBDESC_JOBCODE,
   ],
   options=None,
   is_extendable=False,
@@ -495,7 +495,7 @@ _COURSEDESC = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=317,
-  serialized_end=584,
+  serialized_end=551,
 )
 
 
@@ -531,8 +531,8 @@ _PING = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=586,
-  serialized_end=621,
+  serialized_start=553,
+  serialized_end=588,
 )
 
 
@@ -583,8 +583,8 @@ _NAMESPACEOPERATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=624,
-  serialized_end=849,
+  serialized_start=591,
+  serialized_end=816,
 )
 
 
@@ -620,34 +620,34 @@ _NAMESPACESTATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=851,
-  serialized_end=923,
+  serialized_start=818,
+  serialized_end=890,
 )
 
 
-_COURSEOPERATION = _descriptor.Descriptor(
-  name='CourseOperation',
-  full_name='CourseOperation',
+_JOBOPERATION = _descriptor.Descriptor(
+  name='JobOperation',
+  full_name='JobOperation',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='action', full_name='CourseOperation.action', index=0,
+      name='action', full_name='JobOperation.action', index=0,
       number=1, type=14, cpp_type=8, label=2,
       has_default_value=False, default_value=1,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='course_id', full_name='CourseOperation.course_id', index=1,
+      name='job_id', full_name='JobOperation.job_id', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='data', full_name='CourseOperation.data', index=2,
+      name='data', full_name='JobOperation.data', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -658,55 +658,55 @@ _COURSEOPERATION = _descriptor.Descriptor(
   ],
   nested_types=[],
   enum_types=[
-    _COURSEOPERATION_COURSEACTION,
+    _JOBOPERATION_JOBACTION,
   ],
   options=None,
   is_extendable=False,
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=926,
-  serialized_end=1118,
+  serialized_start=893,
+  serialized_end=1055,
 )
 
 
-_COURSEPROPOSAL = _descriptor.Descriptor(
-  name='CourseProposal',
-  full_name='CourseProposal',
+_JOBPROPOSAL = _descriptor.Descriptor(
+  name='JobProposal',
+  full_name='JobProposal',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='name_space', full_name='CourseProposal.name_space', index=0,
+      name='name_space', full_name='JobProposal.name_space', index=0,
       number=1, type=9, cpp_type=9, label=2,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='owner_id', full_name='CourseProposal.owner_id', index=1,
+      name='owner_id', full_name='JobProposal.owner_id', index=1,
       number=2, type=3, cpp_type=2, label=2,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='course_id', full_name='CourseProposal.course_id', index=2,
+      name='job_id', full_name='JobProposal.job_id', index=2,
       number=3, type=9, cpp_type=9, label=2,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='weight', full_name='CourseProposal.weight', index=3,
+      name='weight', full_name='JobProposal.weight', index=3,
       number=4, type=5, cpp_type=1, label=2,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='options', full_name='CourseProposal.options', index=4,
+      name='options', full_name='JobProposal.options', index=4,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -723,41 +723,41 @@ _COURSEPROPOSAL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1120,
-  serialized_end=1241,
+  serialized_start=1057,
+  serialized_end=1172,
 )
 
 
-_COURSEBID = _descriptor.Descriptor(
-  name='CourseBid',
-  full_name='CourseBid',
+_JOBBID = _descriptor.Descriptor(
+  name='JobBid',
+  full_name='JobBid',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='name_space', full_name='CourseBid.name_space', index=0,
+      name='name_space', full_name='JobBid.name_space', index=0,
       number=1, type=9, cpp_type=9, label=2,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='owner_id', full_name='CourseBid.owner_id', index=1,
+      name='owner_id', full_name='JobBid.owner_id', index=1,
       number=2, type=3, cpp_type=2, label=2,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='course_id', full_name='CourseBid.course_id', index=2,
+      name='job_id', full_name='JobBid.job_id', index=2,
       number=3, type=9, cpp_type=9, label=2,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='bid', full_name='CourseBid.bid', index=3,
+      name='bid', full_name='JobBid.bid', index=3,
       number=4, type=5, cpp_type=1, label=2,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -774,41 +774,41 @@ _COURSEBID = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1243,
-  serialized_end=1324,
+  serialized_start=1174,
+  serialized_end=1249,
 )
 
 
-_COURSESTATUS = _descriptor.Descriptor(
-  name='CourseStatus',
-  full_name='CourseStatus',
+_JOBSTATUS = _descriptor.Descriptor(
+  name='JobStatus',
+  full_name='JobStatus',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='course_id', full_name='CourseStatus.course_id', index=0,
+      name='job_id', full_name='JobStatus.job_id', index=0,
       number=1, type=9, cpp_type=9, label=2,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='status', full_name='CourseStatus.status', index=1,
+      name='status', full_name='JobStatus.status', index=1,
       number=2, type=14, cpp_type=8, label=2,
       has_default_value=False, default_value=1,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='course_state', full_name='CourseStatus.course_state', index=2,
+      name='job_state', full_name='JobStatus.job_state', index=2,
       number=3, type=14, cpp_type=8, label=2,
       has_default_value=False, default_value=1,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='data', full_name='CourseStatus.data', index=3,
+      name='data', full_name='JobStatus.data', index=3,
       number=4, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -825,8 +825,8 @@ _COURSESTATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1327,
-  serialized_end=1462,
+  serialized_start=1251,
+  serialized_end=1368,
 )
 
 
@@ -862,8 +862,8 @@ _ROUTINGPATH = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1464,
-  serialized_end=1505,
+  serialized_start=1370,
+  serialized_end=1411,
 )
 
 
@@ -949,8 +949,8 @@ _HEADER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1508,
-  serialized_end=1803,
+  serialized_start=1414,
+  serialized_end=1706,
 )
 
 
@@ -976,14 +976,14 @@ _PAYLOAD = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='course_op', full_name='Payload.course_op', index=2,
+      name='job_op', full_name='Payload.job_op', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='course_status', full_name='Payload.course_status', index=3,
+      name='job_status', full_name='Payload.job_status', index=3,
       number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -1007,8 +1007,8 @@ _PAYLOAD = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1806,
-  serialized_end=1990,
+  serialized_start=1709,
+  serialized_end=1881,
 )
 
 
@@ -1044,8 +1044,8 @@ _REQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1992,
-  serialized_end=2050,
+  serialized_start=1883,
+  serialized_end=1941,
 )
 
 
@@ -1081,8 +1081,8 @@ _HEARTBEAT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2052,
-  serialized_end=2098,
+  serialized_start=1943,
+  serialized_end=1989,
 )
 
 
@@ -1119,8 +1119,8 @@ _NETWORK = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2101,
-  serialized_end=2271,
+  serialized_start=1992,
+  serialized_end=2162,
 )
 
 
@@ -1178,8 +1178,8 @@ _LEADERELECTION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2274,
-  serialized_end=2502,
+  serialized_start=2165,
+  serialized_end=2393,
 )
 
 
@@ -1212,14 +1212,14 @@ _MANAGEMENT = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='course_propose', full_name='Management.course_propose', index=3,
+      name='job_propose', full_name='Management.job_propose', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='course_bid', full_name='Management.course_bid', index=4,
+      name='job_bid', full_name='Management.job_bid', index=4,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -1236,30 +1236,30 @@ _MANAGEMENT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2505,
-  serialized_end=2676,
+  serialized_start=2396,
+  serialized_end=2555,
 )
 
 _NAMEVALUESET.fields_by_name['node_type'].enum_type = _NAMEVALUESET_NODETYPE
 _NAMEVALUESET.fields_by_name['node'].message_type = _NAMEVALUESET
 _NAMEVALUESET_NODETYPE.containing_type = _NAMEVALUESET
 _NAMESPACE.fields_by_name['properties'].message_type = _NAMEVALUESET
-_COURSEDESC.fields_by_name['status'].enum_type = _COURSEDESC_COURSECODE
-_COURSEDESC.fields_by_name['options'].message_type = _NAMEVALUESET
-_COURSEDESC_COURSECODE.containing_type = _COURSEDESC
+_JOBDESC.fields_by_name['status'].enum_type = _JOBDESC_JOBCODE
+_JOBDESC.fields_by_name['options'].message_type = _NAMEVALUESET
+_JOBDESC_JOBCODE.containing_type = _JOBDESC
 _NAMESPACEOPERATION.fields_by_name['action'].enum_type = _NAMESPACEOPERATION_SPACEACTION
 _NAMESPACEOPERATION.fields_by_name['data'].message_type = _NAMESPACE
 _NAMESPACEOPERATION.fields_by_name['options'].message_type = _NAMEVALUESET
 _NAMESPACEOPERATION_SPACEACTION.containing_type = _NAMESPACEOPERATION
 _NAMESPACESTATUS.fields_by_name['status'].enum_type = _POKESTATUS
 _NAMESPACESTATUS.fields_by_name['data'].message_type = _NAMESPACE
-_COURSEOPERATION.fields_by_name['action'].enum_type = _COURSEOPERATION_COURSEACTION
-_COURSEOPERATION.fields_by_name['data'].message_type = _COURSEDESC
-_COURSEOPERATION_COURSEACTION.containing_type = _COURSEOPERATION
-_COURSEPROPOSAL.fields_by_name['options'].message_type = _NAMEVALUESET
-_COURSESTATUS.fields_by_name['status'].enum_type = _POKESTATUS
-_COURSESTATUS.fields_by_name['course_state'].enum_type = _COURSEDESC_COURSECODE
-_COURSESTATUS.fields_by_name['data'].message_type = _COURSEDESC
+_JOBOPERATION.fields_by_name['action'].enum_type = _JOBOPERATION_JOBACTION
+_JOBOPERATION.fields_by_name['data'].message_type = _JOBDESC
+_JOBOPERATION_JOBACTION.containing_type = _JOBOPERATION
+_JOBPROPOSAL.fields_by_name['options'].message_type = _NAMEVALUESET
+_JOBSTATUS.fields_by_name['status'].enum_type = _POKESTATUS
+_JOBSTATUS.fields_by_name['job_state'].enum_type = _JOBDESC_JOBCODE
+_JOBSTATUS.fields_by_name['data'].message_type = _JOBDESC
 _HEADER.fields_by_name['routing_id'].enum_type = _HEADER_ROUTING
 _HEADER.fields_by_name['reply_code'].enum_type = _POKESTATUS
 _HEADER.fields_by_name['path'].message_type = _ROUTINGPATH
@@ -1267,8 +1267,8 @@ _HEADER.fields_by_name['options'].message_type = _NAMEVALUESET
 _HEADER_ROUTING.containing_type = _HEADER
 _PAYLOAD.fields_by_name['ping'].message_type = _PING
 _PAYLOAD.fields_by_name['space_op'].message_type = _NAMESPACEOPERATION
-_PAYLOAD.fields_by_name['course_op'].message_type = _COURSEOPERATION
-_PAYLOAD.fields_by_name['course_status'].message_type = _COURSESTATUS
+_PAYLOAD.fields_by_name['job_op'].message_type = _JOBOPERATION
+_PAYLOAD.fields_by_name['job_status'].message_type = _JOBSTATUS
 _PAYLOAD.fields_by_name['space_status'].message_type = _NAMESPACESTATUS
 _REQUEST.fields_by_name['header'].message_type = _HEADER
 _REQUEST.fields_by_name['body'].message_type = _PAYLOAD
@@ -1279,18 +1279,18 @@ _LEADERELECTION_VOTEACTION.containing_type = _LEADERELECTION
 _MANAGEMENT.fields_by_name['graph'].message_type = _NETWORK
 _MANAGEMENT.fields_by_name['beat'].message_type = _HEARTBEAT
 _MANAGEMENT.fields_by_name['election'].message_type = _LEADERELECTION
-_MANAGEMENT.fields_by_name['course_propose'].message_type = _COURSEPROPOSAL
-_MANAGEMENT.fields_by_name['course_bid'].message_type = _COURSEBID
+_MANAGEMENT.fields_by_name['job_propose'].message_type = _JOBPROPOSAL
+_MANAGEMENT.fields_by_name['job_bid'].message_type = _JOBBID
 DESCRIPTOR.message_types_by_name['NameValueSet'] = _NAMEVALUESET
 DESCRIPTOR.message_types_by_name['NameSpace'] = _NAMESPACE
-DESCRIPTOR.message_types_by_name['CourseDesc'] = _COURSEDESC
+DESCRIPTOR.message_types_by_name['JobDesc'] = _JOBDESC
 DESCRIPTOR.message_types_by_name['Ping'] = _PING
 DESCRIPTOR.message_types_by_name['NameSpaceOperation'] = _NAMESPACEOPERATION
 DESCRIPTOR.message_types_by_name['NameSpaceStatus'] = _NAMESPACESTATUS
-DESCRIPTOR.message_types_by_name['CourseOperation'] = _COURSEOPERATION
-DESCRIPTOR.message_types_by_name['CourseProposal'] = _COURSEPROPOSAL
-DESCRIPTOR.message_types_by_name['CourseBid'] = _COURSEBID
-DESCRIPTOR.message_types_by_name['CourseStatus'] = _COURSESTATUS
+DESCRIPTOR.message_types_by_name['JobOperation'] = _JOBOPERATION
+DESCRIPTOR.message_types_by_name['JobProposal'] = _JOBPROPOSAL
+DESCRIPTOR.message_types_by_name['JobBid'] = _JOBBID
+DESCRIPTOR.message_types_by_name['JobStatus'] = _JOBSTATUS
 DESCRIPTOR.message_types_by_name['RoutingPath'] = _ROUTINGPATH
 DESCRIPTOR.message_types_by_name['Header'] = _HEADER
 DESCRIPTOR.message_types_by_name['Payload'] = _PAYLOAD
@@ -1315,12 +1315,12 @@ NameSpace = _reflection.GeneratedProtocolMessageType('NameSpace', (_message.Mess
   ))
 _sym_db.RegisterMessage(NameSpace)
 
-CourseDesc = _reflection.GeneratedProtocolMessageType('CourseDesc', (_message.Message,), dict(
-  DESCRIPTOR = _COURSEDESC,
+JobDesc = _reflection.GeneratedProtocolMessageType('JobDesc', (_message.Message,), dict(
+  DESCRIPTOR = _JOBDESC,
   __module__ = 'comm_pb2'
-  # @@protoc_insertion_point(class_scope:CourseDesc)
+  # @@protoc_insertion_point(class_scope:JobDesc)
   ))
-_sym_db.RegisterMessage(CourseDesc)
+_sym_db.RegisterMessage(JobDesc)
 
 Ping = _reflection.GeneratedProtocolMessageType('Ping', (_message.Message,), dict(
   DESCRIPTOR = _PING,
@@ -1343,33 +1343,33 @@ NameSpaceStatus = _reflection.GeneratedProtocolMessageType('NameSpaceStatus', (_
   ))
 _sym_db.RegisterMessage(NameSpaceStatus)
 
-CourseOperation = _reflection.GeneratedProtocolMessageType('CourseOperation', (_message.Message,), dict(
-  DESCRIPTOR = _COURSEOPERATION,
+JobOperation = _reflection.GeneratedProtocolMessageType('JobOperation', (_message.Message,), dict(
+  DESCRIPTOR = _JOBOPERATION,
   __module__ = 'comm_pb2'
-  # @@protoc_insertion_point(class_scope:CourseOperation)
+  # @@protoc_insertion_point(class_scope:JobOperation)
   ))
-_sym_db.RegisterMessage(CourseOperation)
+_sym_db.RegisterMessage(JobOperation)
 
-CourseProposal = _reflection.GeneratedProtocolMessageType('CourseProposal', (_message.Message,), dict(
-  DESCRIPTOR = _COURSEPROPOSAL,
+JobProposal = _reflection.GeneratedProtocolMessageType('JobProposal', (_message.Message,), dict(
+  DESCRIPTOR = _JOBPROPOSAL,
   __module__ = 'comm_pb2'
-  # @@protoc_insertion_point(class_scope:CourseProposal)
+  # @@protoc_insertion_point(class_scope:JobProposal)
   ))
-_sym_db.RegisterMessage(CourseProposal)
+_sym_db.RegisterMessage(JobProposal)
 
-CourseBid = _reflection.GeneratedProtocolMessageType('CourseBid', (_message.Message,), dict(
-  DESCRIPTOR = _COURSEBID,
+JobBid = _reflection.GeneratedProtocolMessageType('JobBid', (_message.Message,), dict(
+  DESCRIPTOR = _JOBBID,
   __module__ = 'comm_pb2'
-  # @@protoc_insertion_point(class_scope:CourseBid)
+  # @@protoc_insertion_point(class_scope:JobBid)
   ))
-_sym_db.RegisterMessage(CourseBid)
+_sym_db.RegisterMessage(JobBid)
 
-CourseStatus = _reflection.GeneratedProtocolMessageType('CourseStatus', (_message.Message,), dict(
-  DESCRIPTOR = _COURSESTATUS,
+JobStatus = _reflection.GeneratedProtocolMessageType('JobStatus', (_message.Message,), dict(
+  DESCRIPTOR = _JOBSTATUS,
   __module__ = 'comm_pb2'
-  # @@protoc_insertion_point(class_scope:CourseStatus)
+  # @@protoc_insertion_point(class_scope:JobStatus)
   ))
-_sym_db.RegisterMessage(CourseStatus)
+_sym_db.RegisterMessage(JobStatus)
 
 RoutingPath = _reflection.GeneratedProtocolMessageType('RoutingPath', (_message.Message,), dict(
   DESCRIPTOR = _ROUTINGPATH,
@@ -1429,5 +1429,5 @@ _sym_db.RegisterMessage(Management)
 
 
 DESCRIPTOR.has_options = True
-DESCRIPTOR._options = _descriptor._ParseOptions(descriptor_pb2.FileOptions(), _b('\n\004moocH\001'))
+DESCRIPTOR._options = _descriptor._ParseOptions(descriptor_pb2.FileOptions(), _b('\n\003eyeH\001'))
 # @@protoc_insertion_point(module_scope)

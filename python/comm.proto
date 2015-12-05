@@ -1,8 +1,9 @@
 
 option optimize_for = SPEED;
-option java_package = "mooc";
+option java_package = "eye";
 
-// general status. The NO[word] values are 'failure for cause' and FAILURE is w/o cause.
+// general status. The NO[word] values are 'failure for cause' and 
+// FAILURE is w/o cause.
 enum PokeStatus {
    UKNOWN = 1;
    SUCCESS = 2;
@@ -47,21 +48,21 @@ message NameSpace {
    optional NameValueSet properties = 8;
 }
 
-// data - a course description
-message CourseDesc {
+// data - a job description
+message JobDesc {
    required string name_space = 1;
    required int64 owner_id = 2;
-   required string course_id = 3;
-   required CourseCode status = 4;
+   required string job_id = 3;
+   required JobCode status = 4;
    optional NameValueSet options = 5;
 
-   enum CourseCode {
-       COURSEUNKNOWN = 1;
-       COURSERECEIVED = 2;
-       COURSEQUEUED = 3;
-       COURSERUNNING = 4;
-       COURSEKILLED = 100;
-       COURSEFAILED = 101;
+   enum JobCode {
+       JOBUNKNOWN = 1;
+       JOBRECEIVED = 2;
+       JOBQUEUED = 3;
+       JOBRUNNING = 4;
+       JOBKILLED = 100;
+       JOBFAILED = 101;
    }
 }
 
@@ -96,43 +97,43 @@ message NameSpaceStatus {
    repeated NameSpace data = 2;
 }
 
-// request - a course operation
-message CourseOperation {
-   required CourseAction action = 1;
+// request - a job operation
+message JobOperation {
+   required JobAction action = 1;
   
-   // ID for actions on known courses
-   optional string course_id = 2;
+   // ID for actions on known jobs
+   optional string job_id = 2;
 
-   // new course to add
-   optional CourseDesc data = 3;
+   // new job to add
+   optional JobDesc data = 3;
 
-   enum CourseAction {
-      ADDCOURSE = 1;
-      STOPCOURSE = 2;
-      REMOVECOURSE = 3;
-      LISTCOURSES = 4;
+   enum JobAction {
+      ADDJOB = 1;
+      STOPJOB = 2;
+      REMOVEJOB = 3;
+      LISTJOBS = 4;
    }
 }
 
-// request - a node submits a course to be ran on the cluster
-message CourseProposal {
+// request - a node submits a job to be ran on the cluster
+message JobProposal {
    required string name_space = 1;
    required int64 owner_id = 2;
-   required string course_id = 3;
+   required string job_id = 3;
 
    // weight is a scalar value representing the expected load for 
-   // performing this course (e.g., 1 = light, 10 = intensive)
+   // performing this job (e.g., 1 = light, 10 = intensive)
    required int32 weight  = 4;
 
-   // properties of the course
+   // properties of the job
    optional NameValueSet options = 5;
 }
 
-// request - a node's bid for running a course (a response in the form of a request)
-message CourseBid {
+// request - a node's bid for running a job (a response in the form of a request)
+message JobBid {
    required string name_space = 1;
    required int64 owner_id = 2;
-   required string course_id = 3;
+   required string job_id = 3;
 
    // a weighted bid -> this helps to remove ties in systems with a
    // even number of voters 
@@ -140,14 +141,14 @@ message CourseBid {
 }
 
 
-// response - the status of a course
-message CourseStatus {
-    required string course_id = 1;
+// response - the status of a job
+message JobStatus {
+    required string job_id = 1;
     required PokeStatus status = 2;
-    required CourseDesc.CourseCode course_state = 3;
+    required JobDesc.JobCode job_state = 3;
 
-    // data associated with a course request
-    repeated CourseDesc data = 4;
+    // data associated with a job request
+    repeated JobDesc data = 4;
 }
 
 message RoutingPath {
@@ -180,7 +181,7 @@ message Header {
     enum Routing {
         PING = 2;
         NAMESPACES = 3;
-        COURSES = 4;
+        JOBS = 4;
         REPORTS = 10;
         MANAGE = 100;
         }
@@ -193,10 +194,10 @@ message Payload {
 
     // requests only
     optional NameSpaceOperation space_op = 2;
-    optional CourseOperation course_op = 3;
+    optional JobOperation job_op = 3;
 
     // replies only
-    optional CourseStatus course_status = 6;
+    optional JobStatus job_status = 6;
     optional NameSpaceStatus space_status = 7;
    
     // TBD
@@ -255,7 +256,7 @@ message Management {
    // declare an election for a new leader 
    optional LeaderElection election = 3;
 
-   // course management
-   optional CourseProposal course_propose = 4;
-   optional CourseBid course_bid = 5;
+   // job management 
+   optional JobProposal job_propose = 4;
+   optional JobBid job_bid = 5;
 }	

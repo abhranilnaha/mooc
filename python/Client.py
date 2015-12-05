@@ -9,7 +9,7 @@
 # Licence:     <your licence>
 #-------------------------------------------------------------------------------
 from SocketChannel import SocketChannel, SocketChannelFactory
-from comm_pb2 import Request, Header, CourseOperation, CourseDesc, NameValueSet
+from comm_pb2 import Request, Header, JobOperation, JobDesc, NameValueSet
 
 class MoocClient():
 
@@ -42,15 +42,15 @@ class MoocClient():
   def makeSignUpRequest(self):
     request = Request()
     request.header.originator = "client"
-    request.header.routing_id = Header.COURSES
+    request.header.routing_id = Header.JOBS
 
-    request.body.course_op.action = CourseOperation.ADDCOURSE
-    request.body.course_op.data.name_space = "sign_up"
-    request.body.course_op.data.owner_id = 8888
-    request.body.course_op.data.course_id = "signup"
-    request.body.course_op.data.status = CourseDesc.COURSEUNKNOWN
+    request.body.job_op.action = JobOperation.ADDJOB
+    request.body.job_op.data.name_space = "sign_up"
+    request.body.job_op.data.owner_id = 8888
+    request.body.job_op.data.job_id = "signup"
+    request.body.job_op.data.status = JobDesc.JOBUNKNOWN
 
-    data = request.body.course_op.data
+    data = request.body.job_op.data
     data.options.node_type = NameValueSet.VALUE
     data.options.name = "email"
     data.options.value = "abhranilnaha@gmail.com"
