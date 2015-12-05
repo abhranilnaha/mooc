@@ -41,7 +41,7 @@ class MoocClient():
 
   def makeSignUpRequest(self):
     request = Request()
-    request.header.originator = "client"
+    request.header.originator = 1
     request.header.routing_id = Header.JOBS
 
     request.body.job_op.action = JobOperation.ADDJOB
@@ -60,7 +60,7 @@ class MoocClient():
 
   def makePingRequest(self):
     request = Request()
-    request.header.originator = "client"
+    request.header.originator = 1
     request.header.routing_id = Header.PING
 
     request.body.ping.number = 3

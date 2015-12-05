@@ -19,7 +19,7 @@ _sym_db = _symbol_database.Default()
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='comm.proto',
   package='',
-  serialized_pb=_b('\n\ncomm.proto\"\x94\x01\n\x0cNameValueSet\x12)\n\tnode_type\x18\x01 \x02(\x0e\x32\x16.NameValueSet.NodeType\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\r\n\x05value\x18\x03 \x01(\t\x12\x1b\n\x04node\x18\x04 \x03(\x0b\x32\r.NameValueSet\"\x1f\n\x08NodeType\x12\x08\n\x04NODE\x10\x01\x12\t\n\x05VALUE\x10\x02\"\x94\x01\n\tNameSpace\x12\x11\n\x05ns_id\x18\x02 \x02(\x03:\x02-1\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x0c\n\x04\x64\x65sc\x18\x04 \x01(\t\x12\x0f\n\x07\x63reated\x18\x05 \x01(\x03\x12\x15\n\rlast_modified\x18\x06 \x01(\x03\x12\r\n\x05owner\x18\x07 \x01(\t\x12!\n\nproperties\x18\x08 \x01(\x0b\x32\r.NameValueSet\"\xea\x01\n\x07JobDesc\x12\x12\n\nname_space\x18\x01 \x02(\t\x12\x10\n\x08owner_id\x18\x02 \x02(\x03\x12\x0e\n\x06job_id\x18\x03 \x02(\t\x12 \n\x06status\x18\x04 \x02(\x0e\x32\x10.JobDesc.JobCode\x12\x1e\n\x07options\x18\x05 \x01(\x0b\x32\r.NameValueSet\"g\n\x07JobCode\x12\x0e\n\nJOBUNKNOWN\x10\x01\x12\x0f\n\x0bJOBRECEIVED\x10\x02\x12\r\n\tJOBQUEUED\x10\x03\x12\x0e\n\nJOBRUNNING\x10\x04\x12\r\n\tJOBKILLED\x10\x64\x12\r\n\tJOBFAILED\x10\x65\"#\n\x04Ping\x12\x0e\n\x06number\x18\x01 \x02(\x05\x12\x0b\n\x03tag\x18\x02 \x02(\t\"\xe1\x01\n\x12NameSpaceOperation\x12/\n\x06\x61\x63tion\x18\x01 \x02(\x0e\x32\x1f.NameSpaceOperation.SpaceAction\x12\x11\n\x05ns_id\x18\x02 \x01(\x03:\x02-1\x12\x18\n\x04\x64\x61ta\x18\x03 \x01(\x0b\x32\n.NameSpace\x12\x1e\n\x07options\x18\x04 \x01(\x0b\x32\r.NameValueSet\"M\n\x0bSpaceAction\x12\x0c\n\x08\x41\x44\x44SPACE\x10\x01\x12\x0f\n\x0bUPDATESPACE\x10\x02\x12\x0f\n\x0bREMOVESPACE\x10\x03\x12\x0e\n\nLISTSPACES\x10\x04\"H\n\x0fNameSpaceStatus\x12\x1b\n\x06status\x18\x01 \x02(\x0e\x32\x0b.PokeStatus\x12\x18\n\x04\x64\x61ta\x18\x02 \x03(\x0b\x32\n.NameSpace\"\xa2\x01\n\x0cJobOperation\x12\'\n\x06\x61\x63tion\x18\x01 \x02(\x0e\x32\x17.JobOperation.JobAction\x12\x0e\n\x06job_id\x18\x02 \x01(\t\x12\x16\n\x04\x64\x61ta\x18\x03 \x01(\x0b\x32\x08.JobDesc\"A\n\tJobAction\x12\n\n\x06\x41\x44\x44JOB\x10\x01\x12\x0b\n\x07STOPJOB\x10\x02\x12\r\n\tREMOVEJOB\x10\x03\x12\x0c\n\x08LISTJOBS\x10\x04\"s\n\x0bJobProposal\x12\x12\n\nname_space\x18\x01 \x02(\t\x12\x10\n\x08owner_id\x18\x02 \x02(\x03\x12\x0e\n\x06job_id\x18\x03 \x02(\t\x12\x0e\n\x06weight\x18\x04 \x02(\x05\x12\x1e\n\x07options\x18\x05 \x01(\x0b\x32\r.NameValueSet\"K\n\x06JobBid\x12\x12\n\nname_space\x18\x01 \x02(\t\x12\x10\n\x08owner_id\x18\x02 \x02(\x03\x12\x0e\n\x06job_id\x18\x03 \x02(\t\x12\x0b\n\x03\x62id\x18\x04 \x02(\x05\"u\n\tJobStatus\x12\x0e\n\x06job_id\x18\x01 \x02(\t\x12\x1b\n\x06status\x18\x02 \x02(\x0e\x32\x0b.PokeStatus\x12#\n\tjob_state\x18\x03 \x02(\x0e\x32\x10.JobDesc.JobCode\x12\x16\n\x04\x64\x61ta\x18\x04 \x03(\x0b\x32\x08.JobDesc\")\n\x0bRoutingPath\x12\x0c\n\x04node\x18\x01 \x02(\t\x12\x0c\n\x04time\x18\x02 \x02(\x03\"\xa4\x02\n\x06Header\x12#\n\nrouting_id\x18\x01 \x02(\x0e\x32\x0f.Header.Routing\x12\x12\n\noriginator\x18\x02 \x02(\t\x12\x0b\n\x03tag\x18\x03 \x01(\t\x12\x0c\n\x04time\x18\x04 \x01(\x03\x12\x1f\n\nreply_code\x18\x05 \x01(\x0e\x32\x0b.PokeStatus\x12\x11\n\treply_msg\x18\x06 \x01(\t\x12\x1a\n\x04path\x18\x07 \x03(\x0b\x32\x0c.RoutingPath\x12\x0e\n\x06toNode\x18\x08 \x01(\t\x12\x1e\n\x07options\x18\t \x03(\x0b\x32\r.NameValueSet\"F\n\x07Routing\x12\x08\n\x04PING\x10\x02\x12\x0e\n\nNAMESPACES\x10\x03\x12\x08\n\x04JOBS\x10\x04\x12\x0b\n\x07REPORTS\x10\n\x12\n\n\x06MANAGE\x10\x64\"\xac\x01\n\x07Payload\x12\x13\n\x04ping\x18\x01 \x01(\x0b\x32\x05.Ping\x12%\n\x08space_op\x18\x02 \x01(\x0b\x32\x13.NameSpaceOperation\x12\x1d\n\x06job_op\x18\x03 \x01(\x0b\x32\r.JobOperation\x12\x1e\n\njob_status\x18\x06 \x01(\x0b\x32\n.JobStatus\x12&\n\x0cspace_status\x18\x07 \x01(\x0b\x32\x10.NameSpaceStatus\":\n\x07Request\x12\x17\n\x06header\x18\x01 \x02(\x0b\x32\x07.Header\x12\x16\n\x04\x62ody\x18\x02 \x02(\x0b\x32\x08.Payload\".\n\tHeartbeat\x12\x0f\n\x07node_id\x18\x01 \x02(\t\x12\x10\n\x08time_ref\x18\x02 \x02(\x03\"\xaa\x01\n\x07Network\x12\x0f\n\x07node_id\x18\x01 \x02(\t\x12&\n\x06\x61\x63tion\x18\x02 \x02(\x0e\x32\x16.Network.NetworkAction\"f\n\rNetworkAction\x12\x0c\n\x08NODEJOIN\x10\x01\x12\r\n\tNODELEAVE\x10\x02\x12\x0c\n\x08NODEDEAD\x10\x03\x12\r\n\tCREATEMAP\x10\x37\x12\x0c\n\x08\x41NNOUNCE\x10\x38\x12\r\n\x08SHUTDOWN\x10\xe7\x07\"\xe4\x01\n\x0eLeaderElection\x12\x0f\n\x07node_id\x18\x01 \x02(\t\x12\x11\n\tballot_id\x18\x02 \x02(\t\x12\x0c\n\x04\x64\x65sc\x18\x04 \x02(\t\x12(\n\x04vote\x18\x05 \x02(\x0e\x32\x1a.LeaderElection.VoteAction\x12\x0f\n\x07\x65xpires\x18\x06 \x01(\x03\"e\n\nVoteAction\x12\x0c\n\x08\x45LECTION\x10\x01\x12\x0c\n\x08NOMINATE\x10\x02\x12\x0b\n\x07\x41\x42STAIN\x10\x03\x12\x11\n\rDECLAREWINNER\x10\x04\x12\x0f\n\x0b\x44\x45\x43LAREVOID\x10\x05\x12\n\n\x06LEADER\x10\x06\"\x9f\x01\n\nManagement\x12\x17\n\x05graph\x18\x01 \x01(\x0b\x32\x08.Network\x12\x18\n\x04\x62\x65\x61t\x18\x02 \x01(\x0b\x32\n.Heartbeat\x12!\n\x08\x65lection\x18\x03 \x01(\x0b\x32\x0f.LeaderElection\x12!\n\x0bjob_propose\x18\x04 \x01(\x0b\x32\x0c.JobProposal\x12\x18\n\x07job_bid\x18\x05 \x01(\x0b\x32\x07.JobBid*\x91\x01\n\nPokeStatus\x12\n\n\x06UKNOWN\x10\x01\x12\x0b\n\x07SUCCESS\x10\x02\x12\x0b\n\x07NOFOUND\x10\x64\x12\x10\n\x0cNOINCOMPLETE\x10\x65\x12\n\n\x06NOAUTH\x10\x66\x12\x10\n\x0cNOCONNECTION\x10g\x12\x0f\n\x0bNOREACHABLE\x10h\x12\x0e\n\nNORESOURCE\x10i\x12\x0c\n\x07\x46\x41ILURE\x10\xc7\x01\x42\x07\n\x03\x65yeH\x01')
+  serialized_pb=_b('\n\ncomm.proto\"\x94\x01\n\x0cNameValueSet\x12)\n\tnode_type\x18\x01 \x02(\x0e\x32\x16.NameValueSet.NodeType\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\r\n\x05value\x18\x03 \x01(\t\x12\x1b\n\x04node\x18\x04 \x03(\x0b\x32\r.NameValueSet\"\x1f\n\x08NodeType\x12\x08\n\x04NODE\x10\x01\x12\t\n\x05VALUE\x10\x02\"\x94\x01\n\tNameSpace\x12\x11\n\x05ns_id\x18\x02 \x02(\x03:\x02-1\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x0c\n\x04\x64\x65sc\x18\x04 \x01(\t\x12\x0f\n\x07\x63reated\x18\x05 \x01(\x03\x12\x15\n\rlast_modified\x18\x06 \x01(\x03\x12\r\n\x05owner\x18\x07 \x01(\t\x12!\n\nproperties\x18\x08 \x01(\x0b\x32\r.NameValueSet\"\xea\x01\n\x07JobDesc\x12\x12\n\nname_space\x18\x01 \x02(\t\x12\x10\n\x08owner_id\x18\x02 \x02(\x03\x12\x0e\n\x06job_id\x18\x03 \x02(\t\x12 \n\x06status\x18\x04 \x02(\x0e\x32\x10.JobDesc.JobCode\x12\x1e\n\x07options\x18\x05 \x01(\x0b\x32\r.NameValueSet\"g\n\x07JobCode\x12\x0e\n\nJOBUNKNOWN\x10\x01\x12\x0f\n\x0bJOBRECEIVED\x10\x02\x12\r\n\tJOBQUEUED\x10\x03\x12\x0e\n\nJOBRUNNING\x10\x04\x12\r\n\tJOBKILLED\x10\x64\x12\r\n\tJOBFAILED\x10\x65\"#\n\x04Ping\x12\x0e\n\x06number\x18\x01 \x02(\x05\x12\x0b\n\x03tag\x18\x02 \x02(\t\"\xe1\x01\n\x12NameSpaceOperation\x12/\n\x06\x61\x63tion\x18\x01 \x02(\x0e\x32\x1f.NameSpaceOperation.SpaceAction\x12\x11\n\x05ns_id\x18\x02 \x01(\x03:\x02-1\x12\x18\n\x04\x64\x61ta\x18\x03 \x01(\x0b\x32\n.NameSpace\x12\x1e\n\x07options\x18\x04 \x01(\x0b\x32\r.NameValueSet\"M\n\x0bSpaceAction\x12\x0c\n\x08\x41\x44\x44SPACE\x10\x01\x12\x0f\n\x0bUPDATESPACE\x10\x02\x12\x0f\n\x0bREMOVESPACE\x10\x03\x12\x0e\n\nLISTSPACES\x10\x04\"H\n\x0fNameSpaceStatus\x12\x1b\n\x06status\x18\x01 \x02(\x0e\x32\x0b.PokeStatus\x12\x18\n\x04\x64\x61ta\x18\x02 \x03(\x0b\x32\n.NameSpace\"\x88\x02\n\x0cJobOperation\x12\'\n\x06\x61\x63tion\x18\x01 \x02(\x0e\x32\x17.JobOperation.JobAction\x12\x0e\n\x06job_id\x18\x02 \x01(\t\x12\x16\n\x04\x64\x61ta\x18\x03 \x01(\x0b\x32\x08.JobDesc\x12!\n\x0bjob_propose\x18\x05 \x01(\x0b\x32\x0c.JobProposal\x12\x18\n\x07job_bid\x18\x06 \x01(\x0b\x32\x07.JobBid\"j\n\tJobAction\x12\x0b\n\x07SHOWJOB\x10\x02\x12\n\n\x06\x41\x44\x44JOB\x10\x03\x12\x0b\n\x07STOPJOB\x10\x04\x12\r\n\tREMOVEJOB\x10\x05\x12\x0c\n\x08LISTJOBS\x10\x06\x12\x0e\n\nPROPOSEJOB\x10\n\x12\n\n\x06\x42IDJOB\x10\x0b\"\x8e\x01\n\x0bJobProposal\x12\x12\n\nname_space\x18\x01 \x02(\t\x12\x10\n\x08owner_id\x18\x02 \x02(\x03\x12\x0e\n\x06job_id\x18\x03 \x02(\t\x12\x0e\n\x06weight\x18\x04 \x02(\x05\x12\x1e\n\x07options\x18\x05 \x01(\x0b\x32\r.NameValueSet\x12\x19\n\x11\x61uthorizationCode\x18\x06 \x02(\t\"a\n\x06JobBid\x12\x12\n\nname_space\x18\x01 \x02(\t\x12\x10\n\x08owner_id\x18\x02 \x02(\x03\x12\x0e\n\x06job_id\x18\x03 \x02(\t\x12\x0b\n\x03\x62id\x18\x04 \x02(\x05\x12\x14\n\x0csecurityCode\x18\x06 \x02(\t\"u\n\tJobStatus\x12\x0e\n\x06job_id\x18\x01 \x02(\t\x12\x1b\n\x06status\x18\x02 \x02(\x0e\x32\x0b.PokeStatus\x12#\n\tjob_state\x18\x03 \x02(\x0e\x32\x10.JobDesc.JobCode\x12\x16\n\x04\x64\x61ta\x18\x04 \x03(\x0b\x32\x08.JobDesc\",\n\x0bRoutingPath\x12\x0f\n\x07node_id\x18\x01 \x02(\x05\x12\x0c\n\x04time\x18\x02 \x02(\x03\"\xa4\x02\n\x06Header\x12#\n\nrouting_id\x18\x01 \x02(\x0e\x32\x0f.Header.Routing\x12\x12\n\noriginator\x18\x02 \x02(\x05\x12\x0b\n\x03tag\x18\x03 \x01(\t\x12\x0c\n\x04time\x18\x04 \x01(\x03\x12\x1f\n\nreply_code\x18\x05 \x01(\x0e\x32\x0b.PokeStatus\x12\x11\n\treply_msg\x18\x06 \x01(\t\x12\x1a\n\x04path\x18\x07 \x03(\x0b\x32\x0c.RoutingPath\x12\x0e\n\x06toNode\x18\x08 \x01(\x05\x12\x1e\n\x07options\x18\t \x03(\x0b\x32\r.NameValueSet\"F\n\x07Routing\x12\x08\n\x04PING\x10\x02\x12\x0e\n\nNAMESPACES\x10\x03\x12\x08\n\x04JOBS\x10\x04\x12\x0b\n\x07REPORTS\x10\n\x12\n\n\x06MANAGE\x10\x64\"\xac\x01\n\x07Payload\x12\x13\n\x04ping\x18\x01 \x01(\x0b\x32\x05.Ping\x12%\n\x08space_op\x18\x02 \x01(\x0b\x32\x13.NameSpaceOperation\x12\x1d\n\x06job_op\x18\x03 \x01(\x0b\x32\r.JobOperation\x12\x1e\n\njob_status\x18\r \x01(\x0b\x32\n.JobStatus\x12&\n\x0cspace_status\x18\x0c \x01(\x0b\x32\x10.NameSpaceStatus\":\n\x07Request\x12\x17\n\x06header\x18\x01 \x02(\x0b\x32\x07.Header\x12\x16\n\x04\x62ody\x18\x02 \x02(\x0b\x32\x08.Payload*\x91\x01\n\nPokeStatus\x12\n\n\x06UKNOWN\x10\x01\x12\x0b\n\x07SUCCESS\x10\x02\x12\x0b\n\x07NOFOUND\x10\x64\x12\x10\n\x0cNOINCOMPLETE\x10\x65\x12\n\n\x06NOAUTH\x10\x66\x12\x10\n\x0cNOCONNECTION\x10g\x12\x0f\n\x0bNOREACHABLE\x10h\x12\x0e\n\nNORESOURCE\x10i\x12\x0c\n\x07\x46\x41ILURE\x10\xc7\x01\x42\r\n\tpoke.commH\x01')
 )
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -68,8 +68,8 @@ _POKESTATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=2558,
-  serialized_end=2703,
+  serialized_start=2099,
+  serialized_end=2244,
 )
 _sym_db.RegisterEnumDescriptor(_POKESTATUS)
 
@@ -182,26 +182,38 @@ _JOBOPERATION_JOBACTION = _descriptor.EnumDescriptor(
   file=DESCRIPTOR,
   values=[
     _descriptor.EnumValueDescriptor(
-      name='ADDJOB', index=0, number=1,
+      name='SHOWJOB', index=0, number=2,
       options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='STOPJOB', index=1, number=2,
+      name='ADDJOB', index=1, number=3,
       options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='REMOVEJOB', index=2, number=3,
+      name='STOPJOB', index=2, number=4,
       options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='LISTJOBS', index=3, number=4,
+      name='REMOVEJOB', index=3, number=5,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='LISTJOBS', index=4, number=6,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='PROPOSEJOB', index=5, number=10,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='BIDJOB', index=6, number=11,
       options=None,
       type=None),
   ],
   containing_type=None,
   options=None,
-  serialized_start=990,
-  serialized_end=1055,
+  serialized_start=1051,
+  serialized_end=1157,
 )
 _sym_db.RegisterEnumDescriptor(_JOBOPERATION_JOBACTION)
 
@@ -234,86 +246,10 @@ _HEADER_ROUTING = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=1636,
-  serialized_end=1706,
+  serialized_start=1791,
+  serialized_end=1861,
 )
 _sym_db.RegisterEnumDescriptor(_HEADER_ROUTING)
-
-_NETWORK_NETWORKACTION = _descriptor.EnumDescriptor(
-  name='NetworkAction',
-  full_name='Network.NetworkAction',
-  filename=None,
-  file=DESCRIPTOR,
-  values=[
-    _descriptor.EnumValueDescriptor(
-      name='NODEJOIN', index=0, number=1,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='NODELEAVE', index=1, number=2,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='NODEDEAD', index=2, number=3,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='CREATEMAP', index=3, number=55,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='ANNOUNCE', index=4, number=56,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='SHUTDOWN', index=5, number=999,
-      options=None,
-      type=None),
-  ],
-  containing_type=None,
-  options=None,
-  serialized_start=2060,
-  serialized_end=2162,
-)
-_sym_db.RegisterEnumDescriptor(_NETWORK_NETWORKACTION)
-
-_LEADERELECTION_VOTEACTION = _descriptor.EnumDescriptor(
-  name='VoteAction',
-  full_name='LeaderElection.VoteAction',
-  filename=None,
-  file=DESCRIPTOR,
-  values=[
-    _descriptor.EnumValueDescriptor(
-      name='ELECTION', index=0, number=1,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='NOMINATE', index=1, number=2,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='ABSTAIN', index=2, number=3,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='DECLAREWINNER', index=3, number=4,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='DECLAREVOID', index=4, number=5,
-      options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='LEADER', index=5, number=6,
-      options=None,
-      type=None),
-  ],
-  containing_type=None,
-  options=None,
-  serialized_start=2292,
-  serialized_end=2393,
-)
-_sym_db.RegisterEnumDescriptor(_LEADERELECTION_VOTEACTION)
 
 
 _NAMEVALUESET = _descriptor.Descriptor(
@@ -635,7 +571,7 @@ _JOBOPERATION = _descriptor.Descriptor(
     _descriptor.FieldDescriptor(
       name='action', full_name='JobOperation.action', index=0,
       number=1, type=14, cpp_type=8, label=2,
-      has_default_value=False, default_value=1,
+      has_default_value=False, default_value=2,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -653,6 +589,20 @@ _JOBOPERATION = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
+    _descriptor.FieldDescriptor(
+      name='job_propose', full_name='JobOperation.job_propose', index=3,
+      number=5, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='job_bid', full_name='JobOperation.job_bid', index=4,
+      number=6, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
   ],
   extensions=[
   ],
@@ -666,7 +616,7 @@ _JOBOPERATION = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=893,
-  serialized_end=1055,
+  serialized_end=1157,
 )
 
 
@@ -712,6 +662,13 @@ _JOBPROPOSAL = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
+    _descriptor.FieldDescriptor(
+      name='authorizationCode', full_name='JobProposal.authorizationCode', index=5,
+      number=6, type=9, cpp_type=9, label=2,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
   ],
   extensions=[
   ],
@@ -723,8 +680,8 @@ _JOBPROPOSAL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1057,
-  serialized_end=1172,
+  serialized_start=1160,
+  serialized_end=1302,
 )
 
 
@@ -763,6 +720,13 @@ _JOBBID = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
+    _descriptor.FieldDescriptor(
+      name='securityCode', full_name='JobBid.securityCode', index=4,
+      number=6, type=9, cpp_type=9, label=2,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
   ],
   extensions=[
   ],
@@ -774,8 +738,8 @@ _JOBBID = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1174,
-  serialized_end=1249,
+  serialized_start=1304,
+  serialized_end=1401,
 )
 
 
@@ -825,8 +789,8 @@ _JOBSTATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1251,
-  serialized_end=1368,
+  serialized_start=1403,
+  serialized_end=1520,
 )
 
 
@@ -838,9 +802,9 @@ _ROUTINGPATH = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='node', full_name='RoutingPath.node', index=0,
-      number=1, type=9, cpp_type=9, label=2,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
+      name='node_id', full_name='RoutingPath.node_id', index=0,
+      number=1, type=5, cpp_type=1, label=2,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -862,8 +826,8 @@ _ROUTINGPATH = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1370,
-  serialized_end=1411,
+  serialized_start=1522,
+  serialized_end=1566,
 )
 
 
@@ -883,8 +847,8 @@ _HEADER = _descriptor.Descriptor(
       options=None),
     _descriptor.FieldDescriptor(
       name='originator', full_name='Header.originator', index=1,
-      number=2, type=9, cpp_type=9, label=2,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
+      number=2, type=5, cpp_type=1, label=2,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -925,8 +889,8 @@ _HEADER = _descriptor.Descriptor(
       options=None),
     _descriptor.FieldDescriptor(
       name='toNode', full_name='Header.toNode', index=7,
-      number=8, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
+      number=8, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -949,8 +913,8 @@ _HEADER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1414,
-  serialized_end=1706,
+  serialized_start=1569,
+  serialized_end=1861,
 )
 
 
@@ -984,14 +948,14 @@ _PAYLOAD = _descriptor.Descriptor(
       options=None),
     _descriptor.FieldDescriptor(
       name='job_status', full_name='Payload.job_status', index=3,
-      number=6, type=11, cpp_type=10, label=1,
+      number=13, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
       name='space_status', full_name='Payload.space_status', index=4,
-      number=7, type=11, cpp_type=10, label=1,
+      number=12, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -1007,8 +971,8 @@ _PAYLOAD = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1709,
-  serialized_end=1881,
+  serialized_start=1864,
+  serialized_end=2036,
 )
 
 
@@ -1044,200 +1008,8 @@ _REQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1883,
-  serialized_end=1941,
-)
-
-
-_HEARTBEAT = _descriptor.Descriptor(
-  name='Heartbeat',
-  full_name='Heartbeat',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='node_id', full_name='Heartbeat.node_id', index=0,
-      number=1, type=9, cpp_type=9, label=2,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='time_ref', full_name='Heartbeat.time_ref', index=1,
-      number=2, type=3, cpp_type=2, label=2,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  options=None,
-  is_extendable=False,
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1943,
-  serialized_end=1989,
-)
-
-
-_NETWORK = _descriptor.Descriptor(
-  name='Network',
-  full_name='Network',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='node_id', full_name='Network.node_id', index=0,
-      number=1, type=9, cpp_type=9, label=2,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='action', full_name='Network.action', index=1,
-      number=2, type=14, cpp_type=8, label=2,
-      has_default_value=False, default_value=1,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-    _NETWORK_NETWORKACTION,
-  ],
-  options=None,
-  is_extendable=False,
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1992,
-  serialized_end=2162,
-)
-
-
-_LEADERELECTION = _descriptor.Descriptor(
-  name='LeaderElection',
-  full_name='LeaderElection',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='node_id', full_name='LeaderElection.node_id', index=0,
-      number=1, type=9, cpp_type=9, label=2,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='ballot_id', full_name='LeaderElection.ballot_id', index=1,
-      number=2, type=9, cpp_type=9, label=2,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='desc', full_name='LeaderElection.desc', index=2,
-      number=4, type=9, cpp_type=9, label=2,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='vote', full_name='LeaderElection.vote', index=3,
-      number=5, type=14, cpp_type=8, label=2,
-      has_default_value=False, default_value=1,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='expires', full_name='LeaderElection.expires', index=4,
-      number=6, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-    _LEADERELECTION_VOTEACTION,
-  ],
-  options=None,
-  is_extendable=False,
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2165,
-  serialized_end=2393,
-)
-
-
-_MANAGEMENT = _descriptor.Descriptor(
-  name='Management',
-  full_name='Management',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='graph', full_name='Management.graph', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='beat', full_name='Management.beat', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='election', full_name='Management.election', index=2,
-      number=3, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='job_propose', full_name='Management.job_propose', index=3,
-      number=4, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='job_bid', full_name='Management.job_bid', index=4,
-      number=5, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  options=None,
-  is_extendable=False,
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2396,
-  serialized_end=2555,
+  serialized_start=2038,
+  serialized_end=2096,
 )
 
 _NAMEVALUESET.fields_by_name['node_type'].enum_type = _NAMEVALUESET_NODETYPE
@@ -1255,6 +1027,8 @@ _NAMESPACESTATUS.fields_by_name['status'].enum_type = _POKESTATUS
 _NAMESPACESTATUS.fields_by_name['data'].message_type = _NAMESPACE
 _JOBOPERATION.fields_by_name['action'].enum_type = _JOBOPERATION_JOBACTION
 _JOBOPERATION.fields_by_name['data'].message_type = _JOBDESC
+_JOBOPERATION.fields_by_name['job_propose'].message_type = _JOBPROPOSAL
+_JOBOPERATION.fields_by_name['job_bid'].message_type = _JOBBID
 _JOBOPERATION_JOBACTION.containing_type = _JOBOPERATION
 _JOBPROPOSAL.fields_by_name['options'].message_type = _NAMEVALUESET
 _JOBSTATUS.fields_by_name['status'].enum_type = _POKESTATUS
@@ -1272,15 +1046,6 @@ _PAYLOAD.fields_by_name['job_status'].message_type = _JOBSTATUS
 _PAYLOAD.fields_by_name['space_status'].message_type = _NAMESPACESTATUS
 _REQUEST.fields_by_name['header'].message_type = _HEADER
 _REQUEST.fields_by_name['body'].message_type = _PAYLOAD
-_NETWORK.fields_by_name['action'].enum_type = _NETWORK_NETWORKACTION
-_NETWORK_NETWORKACTION.containing_type = _NETWORK
-_LEADERELECTION.fields_by_name['vote'].enum_type = _LEADERELECTION_VOTEACTION
-_LEADERELECTION_VOTEACTION.containing_type = _LEADERELECTION
-_MANAGEMENT.fields_by_name['graph'].message_type = _NETWORK
-_MANAGEMENT.fields_by_name['beat'].message_type = _HEARTBEAT
-_MANAGEMENT.fields_by_name['election'].message_type = _LEADERELECTION
-_MANAGEMENT.fields_by_name['job_propose'].message_type = _JOBPROPOSAL
-_MANAGEMENT.fields_by_name['job_bid'].message_type = _JOBBID
 DESCRIPTOR.message_types_by_name['NameValueSet'] = _NAMEVALUESET
 DESCRIPTOR.message_types_by_name['NameSpace'] = _NAMESPACE
 DESCRIPTOR.message_types_by_name['JobDesc'] = _JOBDESC
@@ -1295,10 +1060,6 @@ DESCRIPTOR.message_types_by_name['RoutingPath'] = _ROUTINGPATH
 DESCRIPTOR.message_types_by_name['Header'] = _HEADER
 DESCRIPTOR.message_types_by_name['Payload'] = _PAYLOAD
 DESCRIPTOR.message_types_by_name['Request'] = _REQUEST
-DESCRIPTOR.message_types_by_name['Heartbeat'] = _HEARTBEAT
-DESCRIPTOR.message_types_by_name['Network'] = _NETWORK
-DESCRIPTOR.message_types_by_name['LeaderElection'] = _LEADERELECTION
-DESCRIPTOR.message_types_by_name['Management'] = _MANAGEMENT
 DESCRIPTOR.enum_types_by_name['PokeStatus'] = _POKESTATUS
 
 NameValueSet = _reflection.GeneratedProtocolMessageType('NameValueSet', (_message.Message,), dict(
@@ -1399,35 +1160,7 @@ Request = _reflection.GeneratedProtocolMessageType('Request', (_message.Message,
   ))
 _sym_db.RegisterMessage(Request)
 
-Heartbeat = _reflection.GeneratedProtocolMessageType('Heartbeat', (_message.Message,), dict(
-  DESCRIPTOR = _HEARTBEAT,
-  __module__ = 'comm_pb2'
-  # @@protoc_insertion_point(class_scope:Heartbeat)
-  ))
-_sym_db.RegisterMessage(Heartbeat)
-
-Network = _reflection.GeneratedProtocolMessageType('Network', (_message.Message,), dict(
-  DESCRIPTOR = _NETWORK,
-  __module__ = 'comm_pb2'
-  # @@protoc_insertion_point(class_scope:Network)
-  ))
-_sym_db.RegisterMessage(Network)
-
-LeaderElection = _reflection.GeneratedProtocolMessageType('LeaderElection', (_message.Message,), dict(
-  DESCRIPTOR = _LEADERELECTION,
-  __module__ = 'comm_pb2'
-  # @@protoc_insertion_point(class_scope:LeaderElection)
-  ))
-_sym_db.RegisterMessage(LeaderElection)
-
-Management = _reflection.GeneratedProtocolMessageType('Management', (_message.Message,), dict(
-  DESCRIPTOR = _MANAGEMENT,
-  __module__ = 'comm_pb2'
-  # @@protoc_insertion_point(class_scope:Management)
-  ))
-_sym_db.RegisterMessage(Management)
-
 
 DESCRIPTOR.has_options = True
-DESCRIPTOR._options = _descriptor._ParseOptions(descriptor_pb2.FileOptions(), _b('\n\003eyeH\001'))
+DESCRIPTOR._options = _descriptor._ParseOptions(descriptor_pb2.FileOptions(), _b('\n\tpoke.commH\001'))
 # @@protoc_insertion_point(module_scope)
