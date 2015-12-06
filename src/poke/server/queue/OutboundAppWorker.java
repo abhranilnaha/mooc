@@ -58,6 +58,7 @@ public class OutboundAppWorker extends Thread {
 					boolean rtn = false;
 					if (sq.channel != null && sq.channel.isOpen() && sq.channel.isWritable()) {
 						ChannelFuture cf = sq.channel.write(msg);
+						sq.channel.flush();
 
 						// blocks on write - use listener to be async
 						cf.awaitUninterruptibly();

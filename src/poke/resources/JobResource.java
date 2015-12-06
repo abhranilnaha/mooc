@@ -17,13 +17,58 @@ package poke.resources;
 
 import poke.comm.App.Request;
 import poke.server.resources.Resource;
+import poke.comm.App.Payload;
+import poke.comm.App.PokeStatus;
+import poke.comm.App.JobDesc;
+import poke.comm.App.JobStatus;
+import poke.comm.App.NameValueSet;
+import poke.comm.App.NameValueSet.NodeType;
 
 public class JobResource implements Resource {
 
 	@Override
 	public Request process(Request request) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+		JobDesc data = request.getBody().getJobOp().getData();
+		String nameSpace = data.getNameSpace();
+		NameValueSet options = data.getOptions();
+		
+		Request.Builder requestBuilder = Request.newBuilder()
+				.setHeader(request.getHeader());
+		JobDesc.Builder jobDescBuilder = JobDesc.newBuilder();
+		
+		if (nameSpace.equals("sign_up")) {
+			
+		} else if (nameSpace.equals("listcourses")) {
+			jobDescBuilder.setOptions(NameValueSet.newBuilder()
+					.setNodeType(options.getNodeType())
+					.setName(options.getName())
+					.setValue(options.getValue()))
+					.setOptions(NameValueSet.newBuilder()
+							.setNodeType(NameValueSet.NodeType.VALUE)
+							.setName("Java")
+							.setValue("Basic Java"));
+		} else if (nameSpace.equals("getdescription")) {
+			jobDescBuilder.setOptions(NameValueSet.newBuilder()
+					.setNodeType(options.getNodeType())
+					.setName(options.getName())
+					.setValue(options.getValue()));
+		}
+		
+		jobDescBuilder.setNameSpace(nameSpace);						
+		jobDescBuilder.setOwnerId(data.getOwnerId());
+		jobDescBuilder.setJobId(data.getJobId());
+		jobDescBuilder.setStatus(data.getStatus());
+		
+		Payload.Builder payloadBuilder = Payload.newBuilder();
+		
+		JobStatus.Builder jobStatusBuilder = JobStatus.newBuilder();
+		jobStatusBuilder.setJobId(data.getJobId());
+		jobStatusBuilder.setJobState(data.getStatus());
+		jobStatusBuilder.setStatus(PokeStatus.SUCCESS);
+		jobStatusBuilder.addData(jobDescBuilder);
 
+		payloadBuilder.setJobStatus(jobStatusBuilder);	
+		requestBuilder.setBody(payloadBuilder);
+		return requestBuilder.build();
+	}
 }
