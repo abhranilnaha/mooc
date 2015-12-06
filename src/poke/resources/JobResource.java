@@ -22,7 +22,6 @@ import poke.comm.App.PokeStatus;
 import poke.comm.App.JobDesc;
 import poke.comm.App.JobStatus;
 import poke.comm.App.NameValueSet;
-import poke.comm.App.NameValueSet.NodeType;
 
 public class JobResource implements Resource {
 
@@ -37,21 +36,39 @@ public class JobResource implements Resource {
 		JobDesc.Builder jobDescBuilder = JobDesc.newBuilder();
 		
 		if (nameSpace.equals("sign_up")) {
-			
-		} else if (nameSpace.equals("listcourses")) {
+			// sign up logic
+		} else if (nameSpace.equals("sign_in")) {
+			// sign in logic
+		} else if (nameSpace.equals("listcourses")) {			
 			jobDescBuilder.setOptions(NameValueSet.newBuilder()
 					.setNodeType(options.getNodeType())
 					.setName(options.getName())
-					.setValue(options.getValue()))
-					.setOptions(NameValueSet.newBuilder()
+					.setValue(options.getValue())					
+					.addNode(NameValueSet.newBuilder()
 							.setNodeType(NameValueSet.NodeType.VALUE)
 							.setName("Java")
-							.setValue("Basic Java"));
+							.setValue("Basic Java Tutorial"))
+					.addNode(NameValueSet.newBuilder()
+							.setNodeType(NameValueSet.NodeType.VALUE)
+							.setName("Python")
+							.setValue("Basic Python Learning"))
+					.addNode(NameValueSet.newBuilder()
+							.setNodeType(NameValueSet.NodeType.VALUE)
+							.setName("iOS")
+							.setValue("Basic iOS Tutorial"))
+					.addNode(NameValueSet.newBuilder()
+							.setNodeType(NameValueSet.NodeType.VALUE)
+							.setName("Android")
+							.setValue("Basic Android Learning"))
+					.addNode(NameValueSet.newBuilder()
+							.setNodeType(NameValueSet.NodeType.VALUE)
+							.setName("AngularJS Tutorial")
+							.setValue("AngularJS Framework Walkthrough")));
 		} else if (nameSpace.equals("getdescription")) {
 			jobDescBuilder.setOptions(NameValueSet.newBuilder()
 					.setNodeType(options.getNodeType())
 					.setName(options.getName())
-					.setValue(options.getValue()));
+					.setValue("Basic " + options.getValue() + " Tutorial"));
 		}
 		
 		jobDescBuilder.setNameSpace(nameSpace);						
