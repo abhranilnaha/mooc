@@ -32,7 +32,7 @@ message NameValueSet {
     }
 }
 
-// data - a logical separation of data/processing capabilities (same as a tentant)
+// data - a logical separation of data/processing capabilities (same as a tenant)
 message NameSpace {
    // internally created or supplied by caller when performing an action on a NS
    required int64 ns_id = 2 [default = -1]; 

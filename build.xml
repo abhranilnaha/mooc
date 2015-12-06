@@ -84,9 +84,7 @@
 	<target name="server" depends="build">
 		<java fork="yes" maxmemory="1024m" classname="poke.server.Server">
 			<arg value="${basedir}/runtime/localmesh/server0.conf" />
-			<classpath refid="project.classpath" />
-			<jvmarg value="-Xdebug" />
-			<jvmarg value="-Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5432" />
+			<classpath refid="project.classpath" />			
 		</java>
 	</target>
 
