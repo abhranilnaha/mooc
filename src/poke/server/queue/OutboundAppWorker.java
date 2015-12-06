@@ -61,10 +61,11 @@ public class OutboundAppWorker extends Thread {
 						cf.addListener(new ChannelFutureListener() {
 							public void operationComplete(ChannelFuture future) throws InterruptedException {
 					            boolean rtn = cf.isSuccess();
-								if (!rtn)
+								if (!rtn) {
 									sq.outbound.putFirst(msg);
-					            }
-					         });
+								}
+							}
+					    });
 						
 						sq.channel.flush();
 						
